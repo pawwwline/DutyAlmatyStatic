@@ -13,10 +13,12 @@
   }
   </style>
 </head>
-<body class="antialiased text-gray-800 bg-[#F7F9FF] overscroll-none">
+<body class="antialiased text-gray-800 bg-[#F7F9FF] overscroll-none relative overflow-x-hidden">
+    <div class=" absolute w-[22rem] h-[22rem] right-[-10rem] top-[15.13rem] bg-[#007AFF] blur-[23.4rem] z-0 pointer-events-none"></div>
+    <div class="absolute w-[22rem] h-[22rem] left-[-2.31rem] top-[16.19rem] bg-[#f0b766] blur-[23.4rem]"></div>
 <div class="px-[5%] max-w-screen-xl mx-auto bg-[#F7F9FF]">
   <!-- Шапка/Хедер -->
-  <header class="flex w-full px-6 py-3 justify-between items-center rounded-xl  bg-white col-span-full mx-auto my-5">
+  <header class="flex w-full px-6 py-3 justify-between items-center rounded-xl sticky top-0 z-50 bg-white col-span-full mx-auto my-5 shadow-2xs">
     <div>
         <img src="https://loremflickr.com/150/60">
     </div>
@@ -35,7 +37,61 @@
 </header>
 
   <!-- Hero / Первый экран -->
+  <section 
+    class="relative py-5 md:py-5"
+  > 
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-5 px-4 sm:px-6">
+      <!-- Текстовая часть -->
+      <div class="w-full md:w-1/2 mb-8 md:mb-0 z-10">
+        <h1 class="text-3xl md:text-6xl font-bold mb-4 text-[#343434]">
+            Таможенное оформление
+            грузов в Алматы
+        </h1>
+        <p class="text-lg md:text-xl mb-6 text-[#34343">
+            Ваш надежный партнер в таможенном брокерстве с 2012 года
+        </p>
+        <button class="rounded-full border border-transparent bg-[#007AFF] px-10 py-2.5 text-white hover:border hover:border-[#007AFF] hover:bg-transparent hover:text-[#007AFF] cursor-pointer">
+          Оставить заявку
+        </button>
 
+      </div>
+        <!-- Картинка / иллюстрация -->
+      <div class="w-96 h-auto md:w-1/2 flex justify-center md:justify-end px-5 z-10">
+        <img 
+          src="src/planeimage.png" 
+          alt="Иллюстрация" 
+          class="w-[900px] h-auto""
+        />
+      </div>
+    </div>
+   
+
+  
+      <!-- Обёртка с overflow-hidden только на мобилке -->
+<div class="absolute bottom-[-80px] left-[-10px] w-full pointer-events-none z-0">
+    <svg
+      viewBox="0 0 900 400"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-full h-auto"
+    >
+      <path
+        d="M869.5 15C849.5 98.3333 755.1 245.8 537.5 169C265.5 73 75 99.5 15 355.5"
+        stroke="#EAF2FB"
+        stroke-width="60"
+        stroke-linecap="round"
+        fill="none"
+        style="
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: drawPath 3s ease-out forwards;
+        "
+      />
+    </svg>
+  </div>
+  
+     
+
+  </section>
 
   <!-- Нам доверяют / Логотипы партнеров -->
   <section class="py-8 md:py-12 bg-white">
