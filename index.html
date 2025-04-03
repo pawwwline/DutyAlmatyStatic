@@ -5,24 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Таможенное оформление груза из Китая</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
   <style>
     @keyframes drawPath {
     to {
       stroke-dashoffset: 0;
     }
   }
+  @keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
   </style>
 </head>
 <body class="antialiased text-gray-800 bg-[#F7F9FF] overscroll-none relative overflow-x-hidden">
-    <div class=" absolute w-[22rem] h-[22rem] right-[-10rem] top-[15.13rem] bg-[#007AFF] blur-[23.4rem] z-0 pointer-events-none"></div>
-    <div class="absolute w-[22rem] h-[22rem] left-[-2.31rem] top-[16.19rem] bg-[#f0b766] blur-[23.4rem]"></div>
+    <div class=" absolute w-[22rem] h-[22rem] right-[-10rem] top-[15.13rem] bg-[#007AFF] blur-[16rem] z-0 pointer-events-none"></div>
+    <div class="absolute z-0 w-[22rem] h-[22rem] left-[-2.31rem] top-[16.19rem] bg-[#f0b766] blur-[23.4rem]"></div>
 <div class="px-[5%] max-w-screen-xl mx-auto bg-[#F7F9FF]">
   <!-- Шапка/Хедер -->
-  <header class="flex w-full px-6 py-3 justify-between items-center rounded-xl sticky top-0 z-50 bg-white col-span-full mx-auto my-5 shadow-2xs">
+  <header class="flex w-full px-5 py-3 justify-between items-center rounded-xl sticky top-0 z-50 bg-white col-span-full mx-auto my-5 shadow-2xs">
     <div>
         <img src="https://loremflickr.com/150/60">
     </div>
-    <nav class="hidden md:flex space-x-4 gap-5 p-0 mx-[4%]">
+    <nav class="hidden md:flex space-x-4 gap-5 p-5 mx-[4%]">
         <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Услуги</a>
         <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Преимущества</a>
         <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Процесс</a>
@@ -30,7 +43,7 @@
         <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Контакты</a>
         <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Статьи</a>
     </nav>
-    <button class="px-6 py-1 text-[#007AFF] text-[1rem] font-onest text-base font-medium leading-[39.7px] tracking-[-0.01em] text-center border border-[#007AFF] rounded-full hover:bg-[#007AFF] hover:text-white transition cursor-pointer">+7702030203</button>
+    <button class="px-5 py-1 text-[#007AFF] text-[1rem] font-onest text-base font-medium leading-[39.7px] tracking-[-0.01em] text-center border border-[#007AFF] rounded-full hover:bg-[#007AFF] hover:text-white transition cursor-pointer">+7702030203</button>
     <button class="md:hidden">
         ☰
       </button>
@@ -40,17 +53,16 @@
   <section 
     class="relative py-5 md:py-5"
   > 
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-5 px-4 sm:px-6">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-5 px-4 sm:px-p-5">
       <!-- Текстовая часть -->
       <div class="w-full md:w-1/2 mb-8 md:mb-0 z-10">
         <h1 class="text-3xl md:text-6xl font-bold mb-4 text-[#343434]">
             Таможенное оформление
             грузов в Алматы
         </h1>
-        <p class="text-lg md:text-xl mb-6 text-[#34343">
+        <p class="text-lg md:text-xl mb-5 text-[#34343]">
             Ваш надежный партнер в таможенном брокерстве с 2012 года
-        </p>
-        <button class="rounded-full border border-transparent bg-[#007AFF] px-10 py-2.5 text-white hover:border hover:border-[#007AFF] hover:bg-transparent hover:text-[#007AFF] cursor-pointer">
+        </p><button class="rounded-full border border-transparent bg-[#007AFF] px-10 py-2.5 text-white hover:border hover:border-[#007AFF] hover:bg-transparent hover:text-[#007AFF] cursor-pointer">
           Оставить заявку
         </button>
 
@@ -89,44 +101,84 @@
     </svg>
   </div>
   
-     
+
 
   </section>
+<!-- Пеимущества -->
+<section class="py-5 relative z-10">
+        <div class="container mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            
+            <!-- Карточка -->
+            <div class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative z-10">
+              <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Работа без задержек</h3>
+              <div class="absolute z-0 -bottom-0 right-0 w-[70%] h-[70%] bg-gray-300 rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]"></div>
+            </div>
+      
+            <!-- Карточка -->
+            <div class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
+              <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Минимальные сроки оформления</h3>
+              <div class="absolute z-0 -bottom-0 right-0 w-[70%] h-[70%] bg-gray-300 rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]"></div>
+            </div>
+      
+            <!-- Карточка -->
+            <div class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
+              <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Аудит и консультации</h3>
+              <div class="absolute z-0  -bottom-0 right-0 w-[70%] h-[70%] bg-gray-300 rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]"></div>
+            </div>
+      
+            <!-- Карточка -->
+            <div class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
+              <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Поддержка клиентов</h3>
+              <div class="absolute z-0 -bottom-0 right-0 w-[70%] h-[70%] bg-gray-300 rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]"></div>
+            </div>
+      
+          </div>
+        </div>
+</section>
+        
 
   <!-- Нам доверяют / Логотипы партнеров -->
-  <section class="py-8 md:py-12 bg-white">
+  <section class="py-8 md:py-12>
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#343434]">
         Нам доверяют
       </h2>
-      <div class="flex flex-wrap justify-center items-center gap-6">
-        <!-- Лого №1 -->
-        <img 
-          src="https://via.placeholder.com/100x50" 
-          alt="Лого 1" 
-          class="h-12 object-contain"
-        />
-        <!-- Лого №2 -->
-        <img 
-          src="https://via.placeholder.com/100x50" 
-          alt="Лого 2" 
-          class="h-12 object-contain"
-        />
-        <!-- Лого №3 -->
-        <img 
-          src="https://via.placeholder.com/100x50" 
-          alt="Лого 3" 
-          class="h-12 object-contain"
-        />
-        <!-- Лого №4 -->
-        <img 
-          src="https://via.placeholder.com/100x50" 
-          alt="Лого 4" 
-          class="h-12 object-contain"
-        />
+  
+      <!-- Внешняя обёртка -->
+      <div class="bg-[#2F6ABF] w-screen relative left-1/2 right-1/2 -mx-[50vw] px-[5vw]"></div>
+      <div class="relative overflow-hidden bg-[#2F6ABF] h-[100px]">
+        <!-- Двигающийся контейнер -->
+        <div class="absolute flex gap-10 animate-marquee whitespace-nowrap w-[200%] mt-7">
+          <!-- Первый блок -->
+          <div class="flex items-center gap-10">
+            <img src="https://loremflickr.com/150/60?lock=1" class="h-12 object-contain items-center" />
+            <img src="https://loremflickr.com/150/60?lock=2" class="h-12 object-contain" />
+            <img src="https://loremflickr.com/150/60?lock=3" class="h-12 object-contain" />
+            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
+            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
+          </div>
+          <!-- Второй блок (повтор) -->
+          <div class="flex gap-10 ">
+            <img src="https://loremflickr.com/150/60?lock=1" class="h-12 object-contain" />
+            <img src="https://loremflickr.com/150/60?lock=2" class="h-12 object-contain" />
+            <img src="https://loremflickr.com/150/60?lock=3" class="h-12 object-contain" />
+            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
+            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
+          </div>
+          <div class="flex gap-10">
+            <img src="https://loremflickr.com/150/60?lock=1" class="h-12 object-contain" />
+            <img src="https://loremflickr.com/150/60?lock=2" class="h-12 object-contain" />
+            <img src="https://loremflickr.com/150/60?lock=3" class="h-12 object-contain" />
+            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
+            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
+          </div>
+        </div>
       </div>
     </div>
   </section>
+  
+  
 
   <!-- Наши услуги -->
   <section class="py-8 md:py-12 bg-gray-50">
@@ -134,45 +186,42 @@
       <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
         Наши услуги
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <!-- Услуга 1 -->
-        <div class="p-6 bg-white rounded-lg shadow">
+        <div class="p-5 bg-white rounded-lg shadow">
           <img 
             src="https://via.placeholder.com/80" 
             alt="Иконка услуги" 
             class="mb-4"
           />
           <h3 class="text-xl font-semibold mb-2">Консультация</h3>
-          <p class="text-gray-600 mb-4">
+          <p 5lass="text-gray-600 mb-4">
             Предоставляем профессиональные консультации по вопросам импорта, таможенного оформления и логистики.
-          </p>
-          <button class="text-blue-600 hover:underline">Подробнее</button>
+          </p>5          <button class="text-blue-600 hover:underline">Подробнее</button>
         </div>
         <!-- Услуга 2 -->
-        <div class="p-6 bg-white rounded-lg shadow">
+        <div class="p-5 bg-white rounded-lg shadow">
           <img 
             src="https://via.placeholder.com/80" 
             alt="Иконка услуги" 
             class="mb-4"
           />
           <h3 class="text-xl font-semibold mb-2">Доставка</h3>
-          <p class="text-gray-600 mb-4">
+          <p 5lass="text-gray-600 mb-4">
             Полный спектр логистических решений для быстрой и безопасной перевозки ваших грузов.
-          </p>
-          <button class="text-blue-600 hover:underline">Подробнее</button>
+          </p>5          <button class="text-blue-600 hover:underline">Подробнее</button>
         </div>
         <!-- Услуга 3 -->
-        <div class="p-6 bg-white rounded-lg shadow">
+        <div class="p-5 bg-white rounded-lg shadow">
           <img 
             src="https://via.placeholder.com/80" 
             alt="Иконка услуги" 
             class="mb-4"
           />
           <h3 class="text-xl font-semibold mb-2">Таможенное оформление</h3>
-          <p class="text-gray-600 mb-4">
+          <p 5lass="text-gray-600 mb-4">
             Комплексные услуги по подготовке документов, прохождению контроля и соблюдению всех формальностей.
-          </p>
-          <button class="text-blue-600 hover:underline">Подробнее</button>
+          </p>5          <button class="text-blue-600 hover:underline">Подробнее</button>
         </div>
       </div>
     </div>
@@ -182,10 +231,9 @@
   <section class="py-8 md:py-12 bg-blue-600 text-white text-center">
     <div class="container mx-auto px-4">
       <h2 class="text-2xl md:text-3xl font-bold mb-4">Готовы обсудить ваш запрос?</h2>
-      <p class="mb-6">
+      <p 5lass="mb-p-5">
         Заполните форму ниже или свяжитесь с нами любым удобным способом.
-      </p>
-      <button class="bg-white text-blue-600 px-6 py-3 rounded-md hover:bg-gray-100 font-semibold">
+      </p>5      <button class="bg-white text-blue-600 px-p-5 py-3 rounded-md hover:bg-gray-100 font-semibold">
         Связаться прямо сейчас
       </button>
     </div>
@@ -197,31 +245,28 @@
       <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
         Как это работает?
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <!-- Шаг 1 -->
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
+        <div class="p-5 bg-gray-50 rounded-lg shadow">
           <div class="text-4xl font-bold text-blue-600 mb-4">01</div>
           <h3 class="text-xl font-semibold mb-2">Оценка и консультация</h3>
-          <p class="text-gray-600">
+          <p 5lass="text-gray-600">
             Связываемся, уточняем детали вашего груза, даём предварительную оценку сроков и стоимости.
-          </p>
-        </div>
+          </p>5        </div>
         <!-- Шаг 2 -->
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
+        <div class="p-5 bg-gray-50 rounded-lg shadow">
           <div class="text-4xl font-bold text-blue-600 mb-4">02</div>
           <h3 class="text-xl font-semibold mb-2">Подготовка документов</h3>
-          <p class="text-gray-600">
+          <p 5lass="text-gray-600">
             Составляем и оформляем все необходимые документы для таможни и перевозки.
-          </p>
-        </div>
+          </p>5        </div>
         <!-- Шаг 3 -->
-        <div class="p-6 bg-gray-50 rounded-lg shadow">
+        <div class="p-5 bg-gray-50 rounded-lg shadow">
           <div class="text-4xl font-bold text-blue-600 mb-4">03</div>
           <h3 class="text-xl font-semibold mb-2">Доставка и оформление</h3>
-          <p class="text-gray-600">
+          <p 5lass="text-gray-600">
             Организуем транспортировку, контролируем прохождение таможенных процедур и передаём груз получателю.
-          </p>
-        </div>
+          </p>5        </div>
       </div>
     </div>
   </section>
@@ -232,39 +277,33 @@
       <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
         Отзывы наших партнёров
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <!-- Отзыв 1 -->
-        <div class="p-6 bg-white rounded-lg shadow flex flex-col">
-          <p class="text-gray-600 mb-4">
+        <div class="p-5 bg-white rounded-lg shadow flex flex-col">
+          <p 5lass="text-gray-600 mb-4">
             “Очень благодарны за оперативность и профессионализм. Все документы были оформлены чётко и без задержек.”
-          </p>
-          <div class="mt-auto flex items-center">
+          </p>5          <div class="mt-auto flex items-center">
             <img 
               src="https://via.placeholder.com/50" 
               alt="Аватар" 
               class="h-12 w-12 rounded-full object-cover mr-4"
             />
             <div>
-              <p class="font-semibold">Иван Иванов</p>
-              <p class="text-sm text-gray-500">ООО «Пример»</p>
-            </div>
+              <p 5lass="font-semibold">Иван Иванов</p>5              <p 5lass="text-sm text-gray-500">ООО «Пример»</p>5            </div>
           </div>
         </div>
         <!-- Отзыв 2 -->
-        <div class="p-6 bg-white rounded-lg shadow flex flex-col">
-          <p class="text-gray-600 mb-4">
+        <div class="p-5 bg-white rounded-lg shadow flex flex-col">
+          <p 5lass="text-gray-600 mb-4">
             “Сотрудничаем не первый год. Всегда быстро реагируют на любые изменения и дают полезные советы.”
-          </p>
-          <div class="mt-auto flex items-center">
+          </p>5          <div class="mt-auto flex items-center">
             <img 
               src="https://via.placeholder.com/50" 
               alt="Аватар" 
               class="h-12 w-12 rounded-full object-cover mr-4"
             />
             <div>
-              <p class="font-semibold">Мария Петрова</p>
-              <p class="text-sm text-gray-500">ИП «Петрова»</p>
-            </div>
+              <p 5lass="font-semibold">Мария Петрова</p>5              <p 5lass="text-sm text-gray-500">ИП «Петрова»</p>5            </div>
           </div>
         </div>
       </div>
@@ -277,30 +316,27 @@
       <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
         Полезно и такое
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <!-- Карточка материала 1 -->
-        <div class="bg-gray-50 p-6 rounded-lg shadow">
+        <div class="bg-gray-50 p-5 rounded-lg shadow">
           <h3 class="text-xl font-semibold mb-2">Статья 1</h3>
-          <p class="text-gray-600 mb-4">
+          <p 5lass="text-gray-600 mb-4">
             Краткое описание полезного материала или новости.
-          </p>
-          <button class="text-blue-600 hover:underline">Читать дальше</button>
+          </p>5          <button class="text-blue-600 hover:underline">Читать дальше</button>
         </div>
         <!-- Карточка материала 2 -->
-        <div class="bg-gray-50 p-6 rounded-lg shadow">
+        <div class="bg-gray-50 p-5 rounded-lg shadow">
           <h3 class="text-xl font-semibold mb-2">Статья 2</h3>
-          <p class="text-gray-600 mb-4">
+          <p 5lass="text-gray-600 mb-4">
             Краткое описание полезного материала или новости.
-          </p>
-          <button class="text-blue-600 hover:underline">Читать дальше</button>
+          </p>5          <button class="text-blue-600 hover:underline">Читать дальше</button>
         </div>
         <!-- Карточка материала 3 -->
-        <div class="bg-gray-50 p-6 rounded-lg shadow">
+        <div class="bg-gray-50 p-5 rounded-lg shadow">
           <h3 class="text-xl font-semibold mb-2">Статья 3</h3>
-          <p class="text-gray-600 mb-4">
+          <p 5lass="text-gray-600 mb-4">
             Краткое описание полезного материала или новости.
-          </p>
-          <button class="text-blue-600 hover:underline">Читать дальше</button>
+          </p>5          <button class="text-blue-600 hover:underline">Читать дальше</button>
         </div>
       </div>
     </div>
@@ -314,7 +350,7 @@
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Форма -->
-        <form class="bg-white p-6 rounded-lg shadow space-y-4">
+        <form class="bg-white p-5 rounded-lg shadow space-y-4">
           <div>
             <label for="name" class="block font-semibold mb-1">Имя</label>
             <input 
@@ -344,7 +380,7 @@
           </div>
           <button 
             type="submit"
-            class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 font-semibold"
+            class="bg-blue-600 text-white px-p-5 py-2 rounded-md hover:bg-blue-700 font-semibold"
           >
             Отправить заявку
           </button>
@@ -382,19 +418,15 @@
         </div>
         <!-- Информация о компании -->
         <div class="flex flex-col justify-center space-y-4">
-          <p class="text-lg">
+          <p 5lass="text-lg">
             <strong>Адрес:</strong> г. Москва, ул. Пример, д. 1
-          </p>
-          <p class="text-lg">
+          </p>5          <p 5lass="text-lg">
             <strong>Телефон:</strong> +7 (900) 123-45-67
-          </p>
-          <p class="text-lg">
+          </p>5          <p 5lass="text-lg">
             <strong>Email:</strong> info@example.com
-          </p>
-          <p class="text-lg">
+          </p>5          <p 5lass="text-lg">
             Работаем пн-пт с 9:00 до 18:00
-          </p>
-        </div>
+          </p>5        </div>
       </div>
     </div>
   </section>
@@ -402,9 +434,7 @@
   <!-- Футер -->
   <footer class="bg-gray-800 text-gray-200 py-4">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-      <p class="mb-2 md:mb-0">&copy; 2025 Название компании</p>
-      <p>Все права защищены</p>
-    </div>
+      <p 5lass="mb-2 md:mb-0">&copy; 2025 Название компании</p>5      <p>5се права защищены</p>5    </div>
   </footer>
 </div>
 </body>
