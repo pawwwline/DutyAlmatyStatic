@@ -6,11 +6,11 @@
   <title>Таможенное оформление груза из Китая</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @keyframes draw {
-      to {
-        stroke-dashoffset: 0;
-      }
+    @keyframes drawPath {
+    to {
+      stroke-dashoffset: 0;
     }
+  }
   </style>
 </head>
 <body class="antialiased text-gray-800 bg-[#F7F9FF] overscroll-none">
@@ -35,54 +35,7 @@
 </header>
 
   <!-- Hero / Первый экран -->
-  <section 
-    class="relative  bg-gradient-to-r  py-5 md:py-5"
-  > 
 
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
-      <!-- Текстовая часть -->
-      <div class="w-full md:w-1/2 mb-8 md:mb-0 z-10">
-        <h1 class="text-3xl md:text-6xl font-bold mb-4">
-            Таможенное оформление
-            грузов в Алматы
-        </h1>
-        <p class="text-lg md:text-xl mb-6">
-            Ваш надежный партнер в таможенном брокерстве с 2012 года
-        </p>
-        <button class="rounded-full border border-transparent bg-[#007AFF] px-10 py-2.5 text-white hover:border hover:border-[#007AFF] hover:bg-transparent hover:text-[#007AFF] cursor-pointer">
-          Оставить заявку
-        </button>
-      </div>
-      <div class="absolute w-[22rem] h-[22rem] left-[-2.31rem] top-[16.19rem] bg-[#f0b766] blur-[23.4rem]"></div>
-      <!-- Картинка / иллюстрация -->
-      <div class="w-96 h-auto md:w-1/2 flex justify-center md:justify-end px-5 z-10">
-        <img 
-          src="src/planeimage.png" 
-          alt="Иллюстрация" 
-          class="w-[900px] h-auto""
-        />
-      </div>
-        <!-- SVG-путь снизу -->
-        <svg
-        viewBox="0 0 900 400"
-        xmlns="http://www.w3.org/2000/svg"
-        class="absolute bottom-0 left-0 w-full h-auto z-0 pointer-events-none"
-      >
-        <path
-          d="M869.5 15C849.5 98.3333 755.1 245.8 537.5 169C265.5 73 75 99.5 15 355.5"
-          stroke="#0077AE"
-          stroke-width="60"
-          stroke-dasharray="100 30"
-          stroke-dashoffset="1400"
-          fill="none"
-          style="
-           animation: draw 3s ease forwards;
-          "
-        />
-      </svg>
-      <div class=" absolute w-[22rem] h-[22rem] right-[-10rem] top-[15.13rem] bg-[#007AFF] blur-[23.4rem] z-0 pointer-events-none"></div>
-    </div>
-  </section>
 
   <!-- Нам доверяют / Логотипы партнеров -->
   <section class="py-8 md:py-12 bg-white">
