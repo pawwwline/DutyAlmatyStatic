@@ -603,103 +603,51 @@
     </div>
   </section>
 
-  <!-- Форма заявки -->
-  <section class="py-8 md:py-12 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
-        Оставьте заявку
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Форма -->
-        <form class="bg-white p-5 rounded-lg shadow space-y-4">
-          <div>
-            <label for="name" class="block font-semibold mb-1">Имя</label>
-            <input 
-              type="text" 
-              id="name" 
-              class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500"
-              placeholder="Введите ваше имя"
-            />
-          </div>
-          <div>
-            <label for="email" class="block font-semibold mb-1">Email</label>
-            <input 
-              type="email" 
-              id="email" 
-              class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500"
-              placeholder="example@mail.com"
-            />
-          </div>
-          <div>
-            <label for="message" class="block font-semibold mb-1">Сообщение</label>
-            <textarea
-              id="message"
-              rows="4"
-              class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500"
-              placeholder="Опишите ваш запрос"
-            ></textarea>
-          </div>
-          <button 
-            type="submit"
-            class="bg-blue-600 text-white px-p-5 py-2 rounded-md hover:bg-blue-700 font-semibold"
-          >
-            Отправить заявку
-          </button>
-        </form>
-        <!-- Изображение или иллюстрация -->
-        <div class="flex items-center justify-center">
-          <img 
-            src="https://via.placeholder.com/400x300" 
-            alt="Изображение с людьми" 
-            class="max-w-full rounded-lg shadow"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+</div>
 
-  <!-- Контакты (карта и информация) -->
-  <section class="py-8 md:py-12 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
+<section class="py-16 bg-[#F7F9FF]">
+    <div class="px-[5%] max-w-screen-xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
         Контакты
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         <!-- Карта -->
-        <div class="bg-gray-100 h-64 rounded-lg shadow">
-          <!-- Подключите реальную карту (Google Maps / Яндекс.Карты) или вставьте iframe -->
+        <div>
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.339655551394!2d37.62039371611071!3d55.755826980552614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414ab37c9b507c05%3A0x5a3b3ce8b1ac69b9!2z0JrQvtC80LXRgNC40Y8g0JrQu9C40LXQsiwg0KDQvtGB0YHQuNGPLCAxMTUxMTI!5e0!3m2!1sru!2sru!4v1611222112345"
+            src="https://maps.google.com/maps?q=43.2850376,76.9481473&z=17&output=embed"
             width="100%"
-            height="100%"
-            style="border:0;"
+            height="360"
+            style="border:0; border-radius:1rem"
             allowfullscreen=""
             loading="lazy"
           ></iframe>
         </div>
-        <!-- Информация о компании -->
-        <div class="flex flex-col justify-center space-y-4">
-          <p 5lass="text-lg">
-            <strong>Адрес:</strong> г. Москва, ул. Пример, д. 1
-          </p>5          <p 5lass="text-lg">
-            <strong>Телефон:</strong> +7 (900) 123-45-67
-          </p>5          <p 5lass="text-lg">
-            <strong>Email:</strong> info@example.com
-          </p>5          <p 5lass="text-lg">
-            Работаем пн-пт с 9:00 до 18:00
-          </p>5        </div>
+  
+        <!-- Контактная информация -->
+        <div class="flex flex-col gap-6">
+          <div>
+            <p class="text-lg font-medium text-gray-800 leading-relaxed">
+              г. Алматы, ул. Суюнбая<br>
+              89Б, офис 307
+            </p>
+            <p class="mt-4 text-lg text-gray-800">pochta@mail.ru</p>
+          </div>
+  
+          <!-- Изображение компании -->
+          <div>
+            <img src="/path/to/company-image.jpg" alt="Фотография офиса или команды" class="rounded-lg shadow-lg w-full max-w-xs md:max-w-sm">
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Футер -->
-  <footer class="bg-gray-800 text-gray-200 py-4">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-      <p 5lass="mb-2 md:mb-0">&copy; 2025 Название компании</p>5      <p>5се права защищены</p>5    </div>
-  </footer>
-</div>
-
-
+    <!-- Футер -->
+    <footer class="bg-gray-800 text-gray-200 py-4">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+          <p 5lass="mb-2 md:mb-0">&copy; 2025 Название компании</p>5      <p>5се права защищены</p>5    </div>
+      </footer>
 
 </body>
 </html>
