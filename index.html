@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Таможенное оформление груза из Китая</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Таможенное оформление в Алматы</title>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-
+  <link href="./src/styles/output.css" rel="stylesheet">
   <style>
-     :root {
+    :root {
       /* Указываем, сколько у нас карточек */
       --numcards: 3;
     }
+
     @keyframes drawPath {
-    to {
-      stroke-dashoffset: 0;
+      to {
+        stroke-dashoffset: 0;
+      }
     }
-  }
-  @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-.card {
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+
+    .card {
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
@@ -43,254 +48,274 @@
       top: 0;
       left: 0;
       right: 0;
-      transform-origin: top center;}
+      transform-origin: top center;
+    }
   </style>
 </head>
-<body class="antialiased text-gray-800 bg-[#F7F9FF] overscroll-none relative overflow-x-hidden">
-    <div class=" absolute w-[22rem] h-[22rem] right-[-10rem] top-[15.13rem] bg-[#007AFF] blur-[16rem] z-0 pointer-events-none"></div>
-    <div class="absolute z-0 w-[22rem] h-[22rem] left-[-2.31rem] top-[16.19rem] bg-[#f0b766] blur-[23.4rem]"></div>
-<div class="px-[5%] max-w-screen-xl mx-auto bg-[#F7F9FF]">
+
+<body class="antialiased text-gray-800 bg-[#F7F9FF] overscroll-none overflow-x-hidden">
+  <div
+    class=" absolute w-[22rem] h-[22rem] right-[-10rem] top-[15.13rem] bg-[#007AFF] blur-[16rem] z-0 pointer-events-none">
+  </div>
+  <div class="absolute z-0 w-[22rem] h-[22rem] left-[-2.31rem] top-[16.19rem] bg-[#f0b766] blur-[23.4rem]"></div>
   <!-- Шапка/Хедер -->
-  <header class="flex w-full px-5 py-3 justify-between items-center rounded-xl sticky top-0 z-50 bg-white col-span-full mx-auto my-5 shadow-2xs">
-    <div>
-        <img src="https://loremflickr.com/150/60">
-    </div>
+  <header
+    class="mx-[5%] max-w-screen-xl mx-auto flex px-5 py-3 justify-between items-center rounded-xl sticky top-0 z-50 bg-white col-span-full mx-auto my-5 shadow-2xs">
+    <a href="#hero" class="cursor-pointer">
+      <img class="h-[60px] w-[150px]" src="public/img/logo.png">
+    </a>
     <nav class="hidden md:flex space-x-4 gap-5 p-5 mx-[4%]">
-        <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Услуги</a>
-        <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Преимущества</a>
-        <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Процесс</a>
-        <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Отзывы</a>
-        <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Контакты</a>
-        <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Статьи</a>
+      <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Услуги</a>
+      <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Преимущества</a>
+      <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Процесс</a>
+      <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Отзывы</a>
+      <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Контакты</a>
+      <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Статьи</a>
     </nav>
-    <button class="px-5 py-1 text-[#007AFF] text-[1rem] font-onest text-base font-medium leading-[39.7px] tracking-[-0.01em] text-center border border-[#007AFF] rounded-full hover:bg-[#007AFF] hover:text-white transition cursor-pointer">+7702030203</button>
+    <button
+      class="px-5 py-1 text-[#007AFF] text-[1rem] font-onest text-base font-medium leading-[39.7px] tracking-[-0.01em] text-center border border-[#007AFF] rounded-full hover:bg-[#007AFF] hover:text-white transition cursor-pointer">+7702030203</button>
     <button class="md:hidden">
-        ☰
-      </button>
-</header>
+      ☰
+    </button>
+  </header>
 
   <!-- Hero / Первый экран -->
-  <section 
-    class="relative py-5 md:py-5"
-  > 
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-5 px-4 sm:px-[5%]">
-      <!-- Текстовая часть -->
-      <div class="w-full md:w-1/2 mb-8 md:mb-0 z-10">
-        <h1 class="text-3xl md:text-6xl font-bold mb-4 text-[#343434]">
+  <div class="px-[5%] max-w-screen-xl mx-auto">
+    <section id="hero" class="relative py-5 md:py-5">
+      <div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-5">
+        <!-- Текстовая часть -->
+        <div class="w-full md:w-1/2 mb-8 md:mb-0 z-10">
+          <h1 class="text-3xl md:text-6xl font-bold mb-4 text-[#343434]">
             Таможенное оформление
             грузов в Алматы
-        </h1>
-        <p class="text-lg md:text-xl mb-5 text-[#34343]">
+          </h1>
+          <p class="text-lg md:text-xl mb-5 text-[#34343]">
             Ваш надежный партнер в таможенном брокерстве с 2012 года
-        </p><button class="rounded-full border border-transparent bg-[#007AFF] px-10 py-2.5 text-white hover:border hover:border-[#007AFF] hover:bg-transparent hover:text-[#007AFF] cursor-pointer">
-          Оставить заявку
-        </button>
+          </p><button class="btn btn-primary">
+            Оставить заявку
+          </button>
 
-      </div>
+        </div>
         <!-- Картинка / иллюстрация -->
-      <div class="w-96 h-auto md:w-1/2 flex justify-center md:justify-end px-5 z-10">
-        <img 
-          src="src/planeimage.png" 
-          alt="Иллюстрация" 
-          class="w-[900px] h-auto""
+        <div class="w-96 h-auto md:w-1/2 flex justify-center md:justify-end px-5 z-10">
+          <img src="public/img/planeimage.png" alt="Иллюстрация" class="w-[900px] h-auto""
         />
       </div>
     </div>
    
-
-  
-      <!-- Обёртка с overflow-hidden только на мобилке -->
-<div class="absolute bottom-[-80px] left-[-10px] w-full pointer-events-none z-0">
-    <svg
-      viewBox="0 0 900 400"
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-full h-auto"
-    >
-      <path
-        d="M869.5 15C849.5 98.3333 755.1 245.8 537.5 169C265.5 73 75 99.5 15 355.5"
-        stroke="#EAF2FB"
-        stroke-width="60"
-        stroke-linecap="round"
-        fill="none"
-        style="
+<div class=" absolute bottom-[-80px] left-[-10px] w-full pointer-events-none z-0">
+          <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <path d="M869.5 15C849.5 98.3333 755.1 245.8 537.5 169C265.5 73 75 99.5 15 355.5" stroke="#EAF2FB"
+              stroke-width="60" stroke-linecap="round" fill="none" style="
           stroke-dasharray: 1000;
           stroke-dashoffset: 1000;
           animation: drawPath 3s ease-out forwards;
-        "
-      />
-    </svg>
-  </div>
-  
-
-
-  </section>
-<!-- Пеимущества -->
-<section class="py-5 relative z-10">
-        <div class="container mx-auto">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            
-            <!-- Карточка -->
-            <div class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative z-10">
-              <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Работа без задержек</h3>
-              <div class="absolute z-0 -bottom-0 right-0 w-[70%] h-[70%] bg-gray-300 rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]"></div>
-            </div>
-      
-            <!-- Карточка -->
-            <div class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
-              <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Минимальные сроки оформления</h3>
-              <div class="absolute z-0 -bottom-0 right-0 w-[70%] h-[70%] bg-gray-300 rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]"></div>
-            </div>
-      
-            <!-- Карточка -->
-            <div class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
-              <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Аудит и консультации</h3>
-              <div class="absolute z-0  -bottom-0 right-0 w-[70%] h-[70%] bg-gray-300 rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]"></div>
-            </div>
-      
-            <!-- Карточка -->
-            <div class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
-              <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Поддержка клиентов</h3>
-              <div class="absolute z-0 -bottom-0 right-0 w-[70%] h-[70%] bg-gray-300 rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]"></div>
-            </div>
-      
-          </div>
+        " />
+          </svg>
         </div>
-</section>
-        
+    </section>
+  </div>
+  <!-- Преимущества -->
+  <div class="px-[5%] max-w-screen-xl mx-auto">
+    <section class="py-5 relative z-10">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+
+          <!-- Карточка -->
+          <div
+            class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative z-10">
+            <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest] ">Работа без
+              задержек</h3>
+            <div
+              class="absolute z-0 -bottom-0 right-0 w-[70%] h-[70%] rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]">
+              <img src="public/img/shield.png">
+            </div>
+          </div>
+
+          <!-- Карточка -->
+          <div
+            class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
+            <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Минимальные
+              сроки оформления</h3>
+            <div
+              class="absolute z-0 -bottom-0 right-0 w-[70%] h-[70%] rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]">
+              <img src="public/img/doc.png">
+            </div>
+          </div>
+
+          <!-- Карточка -->
+          <div
+            class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
+            <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Аудит и
+              консультации</h3>
+            <div
+              class="absolute z-0  -bottom-0 right-0 w-[70%] h-[70%] rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]">
+              <img src="public/img/audit.png">
+            </div>
+          </div>
+
+          <!-- Карточка -->
+          <div
+            class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
+            <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Поддержка
+              клиентов</h3>
+            <div
+              class="absolute z-0 -bottom-0 right-0 w-[70%] h-[70%] rotate-[12deg] translate-x-[15%] translate-y-[10%] rounded-[2rem]">
+              <img src="public/img/support.png">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
 
   <!-- Нам доверяют / Логотипы партнеров -->
   <section class="py-8 md:py-12">
-    <div class="px-[5%] max-w-screen-xl mx-auto"">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#343434]">
+    <div class="max-w-screen-xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#343434] mb-6 text-center">
         Нам доверяют
       </h2>
     </div>
-  
-      <!-- Внешняя обёртка -->
-      <div class="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#2F6ABF] py-6 overflow-hidden h-[75px]">
-        <div class="max-w-screen-xl mx-auto px-[5%] flex gap-10 items-center animate-marquee whitespace-nowrap">
-        <!-- Двигающийся контейнер -->
-        <div class="absolute flex gap-10 animate-marquee whitespace-nowrap w-[200%] mt-7">
-          <!-- Первый блок -->
-          <div class="flex items-center gap-10">
-            <img src="https://loremflickr.com/150/60?lock=1" class="h-12 object-contain items-center" />
-            <img src="https://loremflickr.com/150/60?lock=2" class="h-12 object-contain" />
-            <img src="https://loremflickr.com/150/60?lock=3" class="h-12 object-contain" />
-            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
-            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
-          </div>
-          <!-- Второй блок (повтор) -->
-          <div class="flex gap-10 ">
-            <img src="https://loremflickr.com/150/60?lock=1" class="h-12 object-contain" />
-            <img src="https://loremflickr.com/150/60?lock=2" class="h-12 object-contain" />
-            <img src="https://loremflickr.com/150/60?lock=3" class="h-12 object-contain" />
-            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
-            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
-          </div>
-          <div class="flex gap-10">
-            <img src="https://loremflickr.com/150/60?lock=1" class="h-12 object-contain" />
-            <img src="https://loremflickr.com/150/60?lock=2" class="h-12 object-contain" />
-            <img src="https://loremflickr.com/150/60?lock=3" class="h-12 object-contain" />
-            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
-            <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
-          </div>
-        </div>
+    <div class="w-screen overflow-hidden bg-[#2F6ABF] py-6 h-[75px]"">
+        <div class=" flex w-[200%] animate-marquee">
+      <!-- Блок повторяется дважды -->
+      <div class="flex gap-14 w-1/2 items-center justify-center">
+        <img src="https://loremflickr.com/150/60?lock=1" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=2" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=3" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=5" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=6" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=6" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=6" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=6" class="h-12 object-contain" />
+      </div>
+      <div class="flex gap-14 w-1/2 items-center justify-center">
+        <img src="https://loremflickr.com/150/60?lock=1" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=2" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=3" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=4" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=5" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=6" class="h-12 object-contain" />
+        <img src="https://loremflickr.com/150/60?lock=6" class="h-12 object-contain" />
       </div>
     </div>
+    </div>
+
+
+
   </section>
-  
+
   <section class="py-16 bg-[#f8f9ff]">
     <div class="px-[5%] max-w-screen-xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-5">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#343434] mb-6">
         Наши услуги
       </h2>
-  
+
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <!-- Карточка -->
-        <div class="bg-white rounded-3xl shadow-sm p-6 flex flex-col gap-6">
-          <div class="w-14 h-14 flex items-center justify-center rounded-full bg-orange-50">
+        <div class="bg-white rounded-3xl p-6 flex flex-col gap-6">
+          <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
             <!-- Иконка -->
-            <img src="/icons/box.svg" alt="Иконка" class="w-7 h-7" />
+            <img src="public/img/icons/box.svg" alt="Иконка" class="w-10 h-10" />
           </div>
-          <h3 class="text-lg font-semibold text-[#343434] leading-snug">
+          <h3 class="text-[1.3rem] font-semibold text-[#343434] leading-snug">
             Оформление грузов и деклараций
           </h3>
-          <a href="#" class="mt-auto inline-flex items-center gap-2 px-4 py-2 border rounded-full text-sm font-medium hover:bg-gray-100 transition">
+          <a href="#"
+            class="mt-auto w-1/2 inline-flex items-center gap-2 px-4 py-2 border border-[#343434] rounded-full text-sm font-medium hover:bg-gray-100 transition">
             Подробнее
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            <span class="material-symbols-outlined text-sm">
+              <img src="public/img/icons/arrow.svg">
+            </span>
+          </a>
+        </div>
+        <div class="bg-white rounded-3xl p-6 flex flex-col gap-6">
+          <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
+            <!-- Иконка -->
+            <img src="public/img/icons/shield.svg" alt="Иконка" class="w-10 h-10" />
+          </div>
+          <h3 class="text-[1.3rem] font-semibold text-[#343434] leading-snug">
+            Таможенный контроль и сопровождение
+          </h3>
+          <a href="#"
+            class="mt-auto w-1/2 inline-flex items-center gap-2 px-4 py-2 border border-[#343434] rounded-full text-sm font-medium hover:bg-gray-100 transition">
+            Подробнее
+            <span class="material-symbols-outlined text-sm">
+              <img src="public/img/icons/arrow.svg">
+            </span>
+          </a>
+        </div>
+        <div class="bg-white rounded-3xl p-6 flex flex-col gap-6">
+          <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
+            <!-- Иконка -->
+            <img src="public/img/icons/cert.svg" alt="Иконка" class="w-10 h-10" />
+          </div>
+          <h3 class="text-[1.3rem] font-semibold text-[#343434] leading-snug">
+            Таможенное брокерство
+          </h3>
+          <a href="#"
+            class="mt-auto w-1/2 inline-flex items-center gap-2 px-4 py-2 border border-[#343434] rounded-full text-sm font-medium hover:bg-gray-100 transition">
+            Подробнее
+            <span class="material-symbols-outlined text-sm">
+              <img src="public/img/icons/arrow.svg">
+            </span>
+          </a>
+        </div>
+        <div class="bg-white rounded-3xl  p-6 flex flex-col gap-6">
+          <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
+            <!-- Иконка -->
+            <img src="public/img/icons/optimization.svg" alt="Иконка" class="w-10 h-10" />
+          </div>
+          <h3 class="text-[1.3rem] font-semibold text-[#343434] leading-snug">
+            Оптимизация таможенных платежей и расчет сборов
+          </h3>
+          <a href="#"
+            class="mt-auto w-1/2 inline-flex items-center gap-2 px-4 py-2 border border-[#343434] rounded-full text-sm font-medium hover:bg-gray-100 transition">
+            Подробнее
+            <span class="material-symbols-outlined text-sm">
+              <img src="public/img/icons/arrow.svg">
+            </span>
+          </a>
+        </div>
+        <div class="bg-white rounded-3xl  p-6 flex flex-col gap-6">
+          <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
+            <!-- Иконка -->
+            <img src="public/img/icons/check.svg" alt="Иконка" class="w-8 h-8" />
+          </div>
+          <h3 class="text-[1.3rem] font-semibold text-[#343434] leading-snug">
+            Сертификация и лицензирование
+          </h3>
+          <a href="#"
+            class="mt-auto w-1/2 inline-flex items-center gap-2 px-4 py-2 border border-[#343434] rounded-full text-sm font-medium hover:bg-gray-100 transition">
+            Подробнее
+            <span class="material-symbols-outlined text-sm">
+              <img src="public/img/icons/arrow.svg">
+            </span>
           </a>
         </div>
         <div class="bg-white rounded-3xl shadow-sm p-6 flex flex-col gap-6">
-            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-orange-50">
-              <!-- Иконка -->
-              <img src="/icons/box.svg" alt="Иконка" class="w-7 h-7" />
-            </div>
-            <h3 class="text-lg font-semibold text-[#343434] leading-snug">
-            Таможенный контроль и сопровождение
-            </h3>
-            <a href="#" class="mt-auto inline-flex items-center gap-2 px-4 py-2 border rounded-full text-sm font-medium hover:bg-gray-100 transition">
-              Подробнее
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </a>
+          <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
+            <!-- Иконка -->
+            <img src="public/img/icons/return.svg" alt="Иконка" class="w-8 h-8" />
           </div>
-          <div class="bg-white rounded-3xl p-6 flex flex-col gap-6">
-            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-orange-50">
-              <!-- Иконка -->
-              <img src="/icons/box.svg" alt="Иконка" class="w-7 h-7" />
-            </div>
-            <h3 class="text-lg font-semibold text-gray-800 leading-snug">
-            Таможенное брокерство
-            </h3>
-            <a href="#" class="mt-auto inline-flex items-center gap-2 px-4 py-2 border rounded-full text-sm font-medium hover:bg-gray-100 transition">
-              Подробнее
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </a>
-
-          </div>
-          <div class="bg-white rounded-3xl  p-6 flex flex-col gap-6">
-            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-orange-50">
-              <!-- Иконка -->
-              <img src="/icons/box.svg" alt="Иконка" class="w-7 h-7" />
-            </div>
-            <h3 class="text-lg font-semibold text-gray-800 leading-snug">
-              Оформление грузов и деклараций
-            </h3>
-            <a href="#" class="mt-auto inline-flex items-center gap-2 px-4 py-2 border rounded-full text-sm font-medium hover:bg-gray-100 transition">
-              Подробнее
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </a>
-          </div>
-          <div class="bg-white rounded-3xl  p-6 flex flex-col gap-6">
-            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-orange-50">
-              <!-- Иконка -->
-              <img src="/icons/box.svg" alt="Иконка" class="w-7 h-7" />
-            </div>
-            <h3 class="text-lg font-semibold text-gray-800 leading-snug">
-              Оформление грузов и деклараций
-            </h3>
-            <a href="#" class="mt-auto inline-flex items-center gap-2 px-4 py-2 border rounded-full text-sm font-medium hover:bg-gray-100 transition">
-              Подробнее
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </a>
-          </div>
-          <div class="bg-white rounded-3xl shadow-sm p-6 flex flex-col gap-6">
-            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-orange-50">
-              <!-- Иконка -->
-              <img src="/icons/box.svg" alt="Иконка" class="w-7 h-7" />
-            </div>
-            <h3 class="text-lg font-semibold text-gray-800 leading-snug">
-              Оформление грузов и деклараций
-            </h3>
-            <a href="#" class="mt-auto inline-flex items-center gap-2 px-4 py-2 border rounded-full text-sm font-medium hover:bg-gray-100 transition">
-              Подробнее
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </a>
-          </div>
-
+          <h3 class="text-[1.3rem] font-semibold text-[#343434] leading-snug">
+            Возврат таможенных платежей
+          </h3>
+          <a href="#"
+            class="mt-auto w-1/2 inline-flex items-center gap-2 px-4 py-2 border border-[#343434] rounded-full text-sm font-medium hover:bg-gray-100 transition">
+            Подробнее
+            <span class="material-symbols-outlined text-sm">
+              <img src="public/img/icons/arrow.svg">
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
-  
+
   <section class="bg-[#f8f9ff]">
     <div class="px-[5%] max-w-screen-xl mx-auto">
       <div class="bg-gradient-to-b from-[#75a9f8] to-[#337dff] rounded-xl text-center text-white py-12 px-6">
@@ -298,356 +323,314 @@
           Обсудить необходимую услугу
         </h2>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button class="bg-[#3767b5] hover:bg-[#2e5aad] text-white text-lg font-medium py-3 px-8 rounded-full transition">
+          <button
+            class="bg-[#3767b5] hover:bg-[#2e5aad] text-white text-lg font-medium py-3 px-8 rounded-full transition cursor-pointer">
             +7 (777) 777 77 77
           </button>
-          <button class="bg-white hover:bg-gray-100 text-[#337dff] text-lg font-medium py-3 px-8 rounded-full transition">
+          <button
+            class="bg-white hover:bg-gray-100 text-[#337dff] text-lg font-medium py-3 px-8 rounded-full transition cursor-pointer">
             Оставить заявку
           </button>
         </div>
       </div>
     </div>
   </section>
-  
 
 
 
 
 
-   <section class="py-8">
-       
-    <div id="cards" class="relative h-[300vh]">
-      <h2 
-      class="sticky top-[12.8rem] h-[50vh] z-0 text-3xl font-bold text-gray-800 text-center bg-gray-50 py-4">
-      Как мы работаем?
-    </h2>
-    <div class=" absolute w-[22rem] h-[22rem] right-[-10rem] top-[15.13rem] bg-[#007AFF] blur-[16rem] z-5 pointer-events-none"></div>
-    <div class="absolute z-0 w-[22rem] h-[22rem] left-[-2.31rem] top-[16.19rem] bg-[#f0b766] blur-[23.4rem]"></div>
-  
-      <!-- 1-я карточка -->
-      <div class="sticky top-20 h-[80vh] flex items-center justify-center z-20">
-        <div class="card__content bg-white w-3/5 p-8
-                    rounded-xl shadow-xl transition-transform duration-200 ease-linear">
-          <div class="text-4xl font-bold text-blue-600 mb-4">01</div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Подготовка документов</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Соберем и подготовим все необходимые документы
-          </p>
+  <div class="px-[5%] max-w-screen-xl mx-auto">
+    <section class="pt-8 pb-0 relative">
+      <div id="cards" class="relative h-[300vh]">
+        <h2
+          class="sticky top-[12.8rem] h-[40vh] z-0 text-center bg-gray-50 py-4 text-3xl md:text-4xl font-bold text-[#343434] mb-2">
+          Как мы работаем?
+        </h2>
+        <div
+          class=" absolute w-[22rem] h-[22rem] right-[-10rem] top-[15.13rem] bg-[#007AFF] blur-[16rem] z-5 pointer-events-none">
         </div>
-      </div>
-  
-      <!-- 2-я карточка -->
-      <div class="sticky top-20 h-[80vh] flex items-center justify-center z-20">
-        <div class="card__content bg-white w-3/5 p-8
-                    rounded-xl shadow-xl transition-transform duration-200 ease-linear">
-          <div class="text-4xl font-bold text-blue-600 mb-4">02</div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Проверка и согласование</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Уточняем детали и приводим документацию в нужный вид
-          </p>
-        </div>
-      </div>
-  
-      <!-- 3-я карточка -->
-      <div class="sticky top-20 h-[80vh] flex items-center justify-center z-20">
-        <div class="card__content bg-white w-3/5 p-8 
-                    rounded-xl shadow-xl transition-transform duration-200 ease-linear">
-          <div class="text-4xl font-bold text-blue-600 mb-4">03</div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Финальное оформление</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Завершаем все формальности и запускаем проект
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Следующий блок (пример) -->
-  <section class="bg-red-200 h-48 flex items-center justify-center">
-    <p class="text-white text-xl">Следующий блок</p>
-  </section>
-  
+        <div class="absolute z-0 w-[22rem] h-[22rem] left-[-2.31rem] top-[16.19rem] bg-[#f0b766] blur-[23.4rem]"></div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const cards = document.querySelectorAll('.card__content');
-      const thresholds = [];
-      for (let i = 0; i <= 100; i++) {
-        thresholds.push(i / 100);
-      }
-      
-      cards.forEach((card, index) => {
-        const nextCard = cards[index + 1];
-        if (!nextCard) return;
-    
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            const ratio = entry.intersectionRatio;
-            const newScale = 1 - 0.2 * ratio;
-            card.style.transform = `scale(${newScale})`;
-          });
-        }, {
-          threshold: thresholds,
-          rootMargin: '0px 0px -30% 0px'
-        });
-        
-        observer.observe(nextCard);
-      });
-    });
-    </script>
-    
-  <!-- Отзывы партнеров -->
-  <section class="py-8 md:py-12 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
-        Отзывы наших партнёров
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Отзыв 1 -->
-        <div class="p-5 bg-white rounded-lg shadow flex flex-col">
-          <p class="text-gray-600 mb-4">
-            “Очень благодарны за оперативность и профессионализм. Все документы были оформлены чётко и без задержек.”
-          </p>5          <div class="mt-auto flex items-center">
-            <img 
-              src="https://via.placeholder.com/50" 
-              alt="Аватар" 
-              class="h-12 w-12 rounded-full object-cover mr-4"
-            />
-            <div>
-              <p class="font-semibold">Иван Иванов</p>5              <p class="text-sm text-gray-500">ООО «Пример»</p>5            </div>
+        <!-- 1-я карточка -->
+        <div class="sticky top-20 h-[80vh] flex items-center justify-center z-20">
+          <div
+            class="card__content flex items-start h-[200px] gap-20 bg-white w-3/5 p-8 rounded-xl shadow-xl transition-transform duration-200 ease-linear">
+
+            <!-- Номер -->
+            <div class="text-4xl font-bold text-blue-600">01</div>
+
+            <!-- Заголовок + текст -->
+            <div class="flex flex-col h-[130px] justify-between">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-2">Подготовка документов</h3>
+              <p class="text-gray-600 leading-relaxed max-w-md">
+                Соберем и подготовим все<br />
+                необходимые документы
+              </p>
+            </div>
+
           </div>
         </div>
-        <!-- Отзыв 2 -->
-        <div class="p-5 bg-white rounded-lg shadow flex flex-col">
-          <p class="text-gray-600 mb-4">
-            “Сотрудничаем не первый год. Всегда быстро реагируют на любые изменения и дают полезные советы.”
-          </p>5          <div class="mt-auto flex items-center">
-            <img 
-              src="https://via.placeholder.com/50" 
-              alt="Аватар" 
-              class="h-12 w-12 rounded-full object-cover mr-4"
-            />
-            <div>
-              <p class="font-semibold">Мария Петрова</p>5              <p class="text-sm text-gray-500">ИП «Петрова»</p>5            </div>
+
+
+        <!-- 2-я карточка -->
+        <div class="sticky top-20 h-[80vh] flex items-center justify-center z-20">
+
+          <div
+            class="card__content flex items-start h-[200px] gap-20 bg-white w-3/5 p-8 rounded-xl shadow-xl transition-transform duration-200 ease-linear">
+            <div class="text-4xl font-bold text-blue-600 mb-4">02</div>
+            <div class="flex flex-col h-[130px] justify-between">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-2">Проверка и согласование</h3>
+              <p class="text-gray-600 leading-relaxed w-[60%]">
+                Уточняем детали и приводим документацию в нужный вид
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-я карточка -->
+
+        <div class="sticky top-20 h-[80vh] flex items-center justify-center z-20">
+          <div
+            class="card__content flex items-start h-[200px] gap-20 bg-white w-3/5 p-8 rounded-xl shadow-xl transition-transform duration-200 ease-linear">
+            <div class="text-4xl font-bold text-blue-600 mb-4">03</div>
+            <div class="flex flex-col h-[130px] justify-between">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-2">Финальное оформление</h3>
+              <p class="text-gray-600 leading-relaxed w-[60%]">
+                Завершаем все формальности и запускаем проект
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      <div
+        class=" absolute w-[22rem] h-[22rem] right-[-10rem] top-[50.13rem] bg-[#007AFF] blur-[16rem] z-5 pointer-events-none">
+      </div>
+      <div class="absolute z-0 w-[22rem] h-[22rem] left-[-2.31rem] top-[70.19rem] bg-[#f0b766] blur-[23.4rem]"></div>
+    </section>
+  </div>
 
-  <section x-data="testimonialsComponent()" class="py-16">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Отзывы наших партнёров</h2>
-    </div>
-  
-    <div class="relative max-w-4xl mx-auto">
+  <section x-data="testimonialsComponent()" class="py-0.005">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#343434] mb-6 text-center">Отзывы наших партнёров</h2>
+    <div class="relative max-w-screen-xl px-[5%] mx-auto">
       <!-- Карточка отзыва -->
       <template x-for="(item, index) in testimonials" :key="index">
-        <div x-show="activeIndex === index" class="relative h-[400px] bg-white rounded-2xl shadow-lg p-10">
+        <div x-show="activeIndex === index"
+          class="relative h-[500px] bg-white rounded-2xl shadow-sm px-60 flex flex-col justify-center">
           <!-- Кавычка -->
           <div class="text-blue-500 text-4xl mb-4">“</div>
-  
+
           <!-- Текст отзыва -->
           <p class="text-gray-800 text-lg leading-relaxed mb-8" x-text="item.text"></p>
-  
+
           <!-- Линия -->
           <hr class="border-blue-200 mb-6">
-  
+
           <!-- Автор -->
           <div class="flex items-center gap-4">
-            <img :src="item.avatar" :alt="item.name" class="w-14 h-14 rounded-full object-cover">
+            <img :src="item.avatar" :alt="item.name" class="w-25 h-25 rounded-full object-cover border">
             <div>
               <p class="text-base font-semibold text-gray-900" x-text="item.name"></p>
               <p class="text-sm text-gray-500" x-text="item.position"></p>
             </div>
           </div>
-  
+
           <!-- Стрелки -->
-          <div class="absolute left-[-48px] top-1/2 -translate-y-1/2">
-            <button @click="prev()" class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center text-blue-500">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <div class="absolute w-20 h-20 left-10 top-1/2 -translate-y-1/2 cursor-pointer">
+            <button @click="prev()"
+              class="w-20 h-20 rounded-full bg-white shadow flex items-center justify-center text-blue-500 cursor-pointer">
+              <svg class="w-15 h-15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
           </div>
-  
-          <div class="absolute right-[-48px] top-1/2 -translate-y-1/2">
-            <button @click="next()" class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center text-blue-500">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+
+          <div class="absolute w-20 h-20 right-10 top-1/2 -translate-y-1/2 cursor-pointer">
+            <button @click="next()"
+              class="w-20 h-20 rounded-full bg-white shadow flex items-center justify-center text-blue-500 cursor-pointer">
+              <svg class="w-15 h-15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
         </div>
       </template>
-  
+
       <!-- Индикаторы -->
       <div class="flex justify-center mt-8 space-x-2">
         <template x-for="(item, index) in testimonials" :key="index">
           <button @click="goTo(index)"
-                  :class="{'bg-blue-500': activeIndex === index, 'bg-gray-300': activeIndex !== index}"
-                  class="w-2.5 h-2.5 rounded-full transition-colors"></button>
+            :class="{'bg-blue-500': activeIndex === index, 'bg-gray-300': activeIndex !== index}"
+            class="w-2.5 h-2.5 rounded-full transition-colors"></button>
         </template>
       </div>
     </div>
   </section>
-  
-  <script>
-    function testimonialsComponent() {
-      return {
-        activeIndex: 0,
-        userInteracted: false,
-        testimonials: [
-          {
-            text: "Отличные услуги по оформлению таможни! Сотрудники компании профессионально и оперативно решили все вопросы, связанные с таможенным оформлением моего груза. Документы были подготовлены быстро и без ошибок. Особенно хочу отметить дружелюбие и готовность помочь на каждом этапе процесса. Рекомендую эту компанию всем, кто ищет надёжного партнёра для таможенных операций.",
-            name: "Алексей Иванов",
-            position: "Директор по развитию, ООО 'ИнтерТрейд'",
-            avatar: "/path/to/avatar.jpg"
-          },
-          {
-            text: "Очень довольны сотрудничеством! Всё быстро, понятно и профессионально. Спасибо за индивидуальный подход и поддержку!",
-            name: "Екатерина Новикова",
-            position: "ООО 'ТаможПроф'",
-            avatar: "/path/to/avatar2.jpg"
-          },
-          {
-            text: "Хорошее сопровождение на всех этапах. Документы всегда в порядке, команда быстро отвечает на вопросы и даёт чёткие рекомендации.",
-            name: "Игорь Петров",
-            position: "Менеджер ВЭД, ООО 'ЛогистикСервис'",
-            avatar: "/path/to/avatar3.jpg"
-          }
-        ],
-        init() {
-          setInterval(() => {
-            if (!this.userInteracted) {
-              this.activeIndex = (this.activeIndex + 1) % this.testimonials.length;
-            }
-          }, 7000);
-        },
-        next() {
-          this.activeIndex = (this.activeIndex + 1) % this.testimonials.length;
-          this.userInteracted = true;
-        },
-        prev() {
-          this.activeIndex = (this.activeIndex - 1 + this.testimonials.length) % this.testimonials.length;
-          this.userInteracted = true;
-        },
-        goTo(index) {
-          this.activeIndex = index;
-          this.userInteracted = true;
-        }
-      };
-    }
-  </script>
 
+  <!-- Статьи -->
 
-<!-- Статьи -->
-<section class="py-12">
-    <h2 class="text-3xl font-semibold mb-8">Полезное о таможне</h2>
-  
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Карточка статьи -->
-    <a href="/articles/1" class="block bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-      <article class="bg-white rounded-xl shadow-sm overflow-hidden">
-        <div class="bg-gray-300 h-64 rounded-t-xl"></div>
-        <div class="p-4">
-          <p class="text-blue-500 text-sm mb-1">27.02.2025</p>
-          <h3 class="text-xl font-semibold mb-1">Высокое качество услуг</h3>
-          <p class="text-gray-700 text-sm">Профессионализм на каждом этапе</p>
-        </div>
-      </article>
-    </a>
-      <!-- Карточка статьи -->
-      <article class="bg-white rounded-xl shadow-sm overflow-hidden">
-        <div class="bg-gray-300 h-64 rounded-t-xl"></div>
-        <div class="p-4">
-          <p class="text-blue-500 text-sm mb-1">27.02.2025</p>
-          <h3 class="text-xl font-semibold mb-1">Высокое качество услуг</h3>
-          <p class="text-gray-700 text-sm">Профессионализм на каждом этапе</p>
-        </div>
-      </article>
-  
-      <!-- Карточка статьи -->
-      <a href="/articles/1" class="block bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-      <article class="bg-white rounded-xl shadow-sm overflow-hidden">
-        <div class="bg-gray-300 h-64 rounded-t-xl"></div>
-        <div class="p-4">
-          <p class="text-blue-500 text-sm mb-1">27.02.2025</p>
-          <h3 class="text-xl font-semibold mb-1">Высокое качество услуг</h3>
-          <p class="text-gray-700 text-sm">Профессионализм на каждом этапе</p>
-        </div>
-      </article>
-      </a>
-    </div>
-  </section>
-  
-  <section class="bg-[#E6F1FF] py-16 w-auto rounded-[30px]">
-    <div class="flex flex-col md:flex-row items-center justify-between px-[5%] gap-8">
-      <div class="w-full md:w-1/2">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Оставьте заявку</h2>
-        <p class="text-lg text-gray-700 mb-8">и получите бесплатную консультацию</p>
-  
-        <form class="space-y-4">
-          <input type="text" placeholder="Ваше имя" class="w-full rounded-xl px-4 py-3 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
-          <input type="tel" placeholder="Телефон" class="w-full rounded-xl px-4 py-3 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
-          <input type="email" placeholder="E-mail" class="w-full rounded-xl px-4 py-3 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
-          <textarea placeholder="Комментарий" rows="3" class="w-full rounded-xl px-4 py-3 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
-          <button type="submit" class="bg-blue-600 text-white rounded-full py-3 px-8 font-semibold hover:bg-blue-700 transition">Оставить заявку</button>
-        </form>
+  <div class="px-[5%] max-w-screen-xl mx-auto">
+    <section class="py-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#343434] mb-6">Полезное о таможне</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Карточка статьи -->
+        <a href="/articles/1"
+          class="block bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+          <article class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <div class="bg-gray-300 h-64 rounded-t-xl"></div>
+            <div class="p-4">
+              <p class="text-blue-500 text-sm mb-1">27.02.2025</p>
+              <h3 class="text-xl font-semibold mb-1">Высокое качество услуг</h3>
+              <p class="text-gray-700 text-sm">Профессионализм на каждом этапе</p>
+            </div>
+          </article>
+        </a>
+        <!-- Карточка статьи -->
+        <article class="bg-white rounded-xl shadow-sm overflow-hidden">
+          <div class="bg-gray-300 h-64 rounded-t-xl"></div>
+          <div class="p-4">
+            <p class="text-blue-500 text-sm mb-1">27.02.2025</p>
+            <h3 class="text-xl font-semibold mb-1">Высокое качество услуг</h3>
+            <p class="text-gray-700 text-sm">Профессионализм на каждом этапе</p>
+          </div>
+        </article>
+
+        <!-- Карточка статьи -->
+        <a href="/articles/1"
+          class="block bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+          <article class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <div class="bg-gray-300 h-64 rounded-t-xl"></div>
+            <div class="p-4">
+              <p class="text-blue-500 text-sm mb-1">27.02.2025</p>
+              <h3 class="text-xl font-semibold mb-1">Высокое качество услуг</h3>
+              <p class="text-gray-700 text-sm">Профессионализм на каждом этапе</p>
+            </div>
+          </article>
+        </a>
       </div>
-  
-      <!-- Правая колонка: изображение -->
-      <div class="w-full md:w-1/2 flex justify-center">
-        <img src="/path/to/form-image.png" alt="Люди с документами" class="max-h-[600px] object-contain">
+    </section>
+  </div>
+
+  <div class="px-[5%] max-w-screen-xl mx-auto">
+    <section class="relative bg-[#E6F1FF] py-16 w-auto rounded-[30px] overflow-hidden">
+      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between px-[5%] gap-8">
+
+        <!-- Левая колонка: форма -->
+        <div class="w-full md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#343434]">Оставьте заявку</h2>
+          <p class="text-lg text-[#343434] mb-8">и получите бесплатную консультацию</p>
+
+          <form class="space-y-4">
+            <input type="text" placeholder="Ваше имя"
+              class="w-full rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <input type="tel" placeholder="Телефон"
+              class="w-full rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <input type="email" placeholder="E-mail"
+              class="w-full rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <textarea placeholder="Комментарий" rows="3"
+              class="w-full rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+            <button type="submit"
+              class="bg-blue-600 text-white rounded-full py-3 px-8 font-semibold hover:bg-blue-700 transition">
+              Оставить заявку
+            </button>
+          </form>
+        </div>
+
+        <!-- Мобильная версия картинки: просто в потоке, по центру -->
+        <div class="block md:hidden w-full flex justify-center mt-10">
+          <img src="public/img/people.png" alt="Люди с документами" class="w-3/4 max-w-xs object-contain">
+        </div>
       </div>
-    </div>
-  </section>
 
-</div>
+      <!-- Десктопная версия картинки: absolute, внизу справа -->
+      <div class="hidden md:block absolute bottom-0 -right-20 w-[60%]">
+        <img src="public/img/people.png" alt="Люди с документами"
+          class="w-full h-auto object-contain pointer-events-none select-none">
+      </div>
+    </section>
 
-<section class="py-16 bg-[#F7F9FF]">
+  </div>
+  </div>
+
+
+
+  <section class="py-16 bg-[#F7F9FF]">
     <div class="px-[5%] max-w-screen-xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
-        Контакты
-      </h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#343434] mb-6">Контакты</h2>
   
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        <!-- Карта -->
-        <div>
-          <iframe 
-            src="https://maps.google.com/maps?q=43.2850376,76.9481473&z=17&output=embed"
-            width="100%"
-            height="360"
-            style="border:0; border-radius:1rem"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-50 items-start">
+        
+        <!-- Карта от 2GIS -->
+        <div class="rounded-2xl overflow-hidden">
+          <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
+          <script charset="utf-8">
+            new DGWidgetLoader({
+              "width": "100%",
+              "height": 450,
+              "borderColor": "#a3a3a3",
+              "pos": { "lat": 43.2830789717615, "lon": 76.94843530654907, "zoom": 16 },
+              "opt": { "city": "almaty" },
+              "org": [{ "id": "70000001047838144" }]
+            });
+          </script>
+          <noscript style="color:#c00;font-size:16px;font-weight:bold;">
+            Включите JavaScript для отображения карты
+          </noscript>
         </div>
   
         <!-- Контактная информация -->
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-6 text-[#343434]">
+          <!-- Адрес -->
           <div>
-            <p class="text-lg font-medium text-gray-800 leading-relaxed">
-              г. Алматы, ул. Суюнбая<br>
-              89Б, офис 307
+            <p class="text-lg font-medium leading-relaxed">
+              г. Алматы, ул. Суюнбая<br>89Б, офис 307
             </p>
-            <p class="mt-4 text-lg text-gray-800">pochta@mail.ru</p>
           </div>
   
-          <!-- Изображение компании -->
-          <div>
-            <img src="/path/to/company-image.jpg" alt="Фотография офиса или команды" class="rounded-lg shadow-lg w-full max-w-xs md:max-w-sm">
+          <!-- Email -->
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+              ✉️
+            </div>
+            <a href="mailto:dutyalmaty@mail.ru" class="text-lg hover:underline">
+              dutyalmaty@mail.ru
+            </a>
+          </div>
+  
+          <!-- Telegram -->
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center">
+              <img src="/icons/telegram.svg" alt="Telegram" class="w-6 h-6" />
+            </div>
+            <a href="https://t.me/dutyalmaty" target="_blank" class="text-lg hover:underline">
+              @dutyalmaty
+            </a>
+          </div>
+  
+          <!-- WhatsApp -->
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+              <img src="/icons/whatsapp.svg" alt="WhatsApp" class="w-6 h-6" />
+            </div>
+            <a href="https://wa.me/77077777777" target="_blank" class="text-lg hover:underline">
+              +7 707 777 77 77
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
 
-    <!-- Футер -->
-    <footer class="bg-gray-800 text-gray-200 py-4">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-          <p 5lass="mb-2 md:mb-0">&copy; 2025 Название компании</p>5      <p>5се права защищены</p>5    </div>
-      </footer>
-
+  <!-- Футер -->
+  <footer class="bg-gray-800 text-gray-200 py-4">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <p сlass="mb-2 md:mb-0">&copy; 2025 Duty Almaty</p>
+      <p>Все права защищены</p>
+    </div>
+  </footer>
+  <script src="/src/script.js"></script>
 </body>
+
 </html>

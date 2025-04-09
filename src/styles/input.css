@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* @layer components {
+    .btn {
+      @apply px-10 py-3 rounded-full font-medium transition cursor-pointer;
+    }
+  
+    .btn-primary {
+      @apply bg-accent text-white hover:bg-blue-700;
+    }
+  
+    .btn-outline {
+      @apply border text-accent hover:bg-accent hover:text-white;
+    }
+  
+    .text-h2 {
+      @apply text-3xl md:text-4xl font-bold text-textBlack mb-7;
+    }
+  } */
