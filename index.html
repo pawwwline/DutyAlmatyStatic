@@ -60,7 +60,7 @@
   <div class="absolute z-0 w-[22rem] h-[22rem] left-[-2.31rem] top-[16.19rem] bg-[#f0b766] blur-[23.4rem]"></div>
   <!-- Шапка/Хедер -->
   <header
-    class="mx-[5%] max-w-screen-xl mx-auto flex px-5 py-3 justify-between items-center rounded-xl sticky top-0 z-50 bg-white col-span-full mx-auto my-5 shadow-2xs">
+    class="max-w-screen-xl mx-auto flex px-5 py-3 justify-between items-center rounded-xl sticky top-0 z-50 bg-white col-span-full my-5 shadow-2xs">
     <a href="#hero" class="cursor-pointer">
       <img class="h-[60px] w-[150px]" src="public/img/logo.png">
     </a>
@@ -296,7 +296,7 @@
             </span>
           </a>
         </div>
-        <div class="bg-white rounded-3xl shadow-sm p-6 flex flex-col gap-6">
+        <div class="bg-white rounded-3xl p-6 flex flex-col gap-6">
           <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
             <!-- Иконка -->
             <img src="public/img/icons/return.svg" alt="Иконка" class="w-8 h-8" />
@@ -624,12 +624,51 @@
   
 
   <!-- Футер -->
-  <footer class="bg-gray-800 text-gray-200 py-4">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-      <p сlass="mb-2 md:mb-0">&copy; 2025 Duty Almaty</p>
-      <p>Все права защищены</p>
+  <footer class="bg-white text-[#343434] pt-12 pb-6">
+    <div class="max-w-screen-xl mx-auto px-[5%] flex flex-col md:flex-row md:items-start justify-between gap-10">
+      <!-- Логотип и копирайт -->
+      <div class="flex flex-col gap-4 w-full md:w-1/4">
+        <img src="public/img/logo.png" alt="Логотип" class="w-auto">
+        <p class="text-sm text-gray-500">© Duty Almaty, 2025</p>
+      </div>
+  
+      <!-- Услуги -->
+      <div class="w-full md:w-1/4">
+        <h4 class=" text-gray-500 text-sm font-semibold mb-4">Услуги</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:underline">Оформление грузов</a></li>
+          <li><a href="#" class="hover:underline">Таможенное брокерство</a></li>
+          <li><a href="#" class="hover:underline">Сертификация</a></li>
+          <li><a href="#" class="hover:underline">Сопровождение грузов</a></li>
+          <li><a href="#" class="hover:underline">Возврат платежей</a></li>
+        </ul>
+      </div>
+  
+      <!-- Соцсети -->
+      <div class="w-full md:w-1/4">
+        <h4 class=" text-gray-500 text-sm font-semibold mb-4">Соцсети</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://t.me/dutyalmaty" target="_blank" class="hover:underline">Telegram ↗</a></li>
+          <li><a href="#" class="hover:underline">WhatsApp ↗</a></li>
+        </ul>
+      </div>
+  
+      <!-- Реквизиты -->
+      <div class="w-full md:w-1/4">
+        <h4 class=" text-gray-500 text-sm font-semibold mb-4">Реквизиты</h4>
+        <p class="text-sm leading-relaxed">
+          ТОО "Duty Almaty"<br>
+          БИН: 5406799400<br>
+        </p>
+      </div>
+
+  
+    <!-- Нижняя часть -->
+    <div class="mt-10 border-t pt-4 border-gray-200 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center px-[5%]">
+      <p>Политика конфиденциальности</p>
     </div>
   </footer>
+  
   <script src="/src/script.js"></script>
 </body>
 
