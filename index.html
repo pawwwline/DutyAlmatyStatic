@@ -6,85 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Таможенное оформление в Алматы</title>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
   <link href="./src/styles/output.css" rel="stylesheet">
-  <style>
-    :root {
-      /* Указываем, сколько у нас карточек */
-      --numcards: 3;
-    }
-
-    @keyframes drawPath {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .animate-marquee {
-      animation: marquee 30s linear infinite;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 60px;
-      border-radius: 1.5rem;
-      background: white;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      transform-origin: top center;
-    }
-  </style>
+  <link rel="icon" type="image/png" href="/public/img/icons/favicon.svg" sizes="32x32">
 </head>
 
 
 
-<body class="antialiased text-gray-800 bg-[#F7F9FF] scroll-smooth">
+<body class="antialiased  bg-[#F7F9FF] scroll-smooth overflow-x-hidden">
  
-  <!-- Шапка/Хедер -->
   <header 
   x-data="{ open: false }" 
   class="max-w-screen-xl mx-auto flex px-5 py-3 justify-between items-center rounded-xl sticky top-0 z-50 bg-white col-span-full my-5 shadow-2xs"
 >
-  <!-- Логотип -->
-  <a href="#hero" class="cursor-pointer">
+  <a href="/#hero" class="cursor-pointer">
     <img class="h-[60px] w-[150px]" src="public/img/logo.png" />
   </a>
 
-  <!-- Десктопное меню -->
-  <nav class="hidden md:flex space-x-4 gap-5 p-5 mx-[4%]">
-    <a href="#adv" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Услуги</a>
-    <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Преимущества</a>
-    <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Процесс</a>
-    <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Отзывы</a>
-    <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Контакты</a>
-    <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Статьи</a>
+  <nav class="hidden lg:flex space-x-4 gap-5 p-5 mx-[4%]">
+    <a href="/#adv" class="hover:text-gray-900 text-1">Преимущества</a>
+    <a href="/#services" class=" hover:text-gray-900 text-1">Услуги</a>
+    <a href="/#process" class=" hover:text-gray-900 text-1">Процесс</a>
+    <a href="/#reviews" class=" hover:text-gray-900 text-1">Отзывы</a>
+    <a href="#articles" class=" hover:text-gray-900 text-1">Статьи</a>
+    <a href="/#contacts" class=" hover:text-gray-900 text-1">Контакты</a>
+
   </nav>
 
-  <!-- Кнопка телефона (всегда видимая) -->
   <button
     class="px-5 py-1 text-[#007AFF] text-[1rem] font-onest text-base font-medium leading-[39.7px] tracking-[-0.01em] text-center border border-[#007AFF] rounded-full hover:bg-[#007AFF] hover:text-white transition cursor-pointer">
     +7702030203
   </button>
 
-  <!-- Кнопка-гамбургер -->
-  <button @click="open = !open" class="md:hidden z-50 text-3xl text-[#007AFF]">
+  <button @click="open = !open" class="lg:hidden z-50 text-3xl text-[#007AFF]">
     <span x-show="!open">☰</span>
     <span x-show="open">✕</span>
   </button>
@@ -95,23 +51,21 @@
     x-transition 
     class="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-6 md:hidden z-40"
   >
-    <a href="#adv" @click="open = false" class="text-gray-900 text-base">Услуги</a>
-    <a href="#" @click="open = false" class="text-gray-900 text-base">Преимущества</a>
-    <a href="#" @click="open = false" class="text-gray-900 text-base">Процесс</a>
-    <a href="#" @click="open = false" class="text-gray-900 text-base">Отзывы</a>
-    <a href="#" @click="open = false" class="text-gray-900 text-base">Контакты</a>
-    <a href="#" @click="open = false" class="text-gray-900 text-base">Статьи</a>
+    <a href="#adv" @click="open = false" class="text-base">Услуги</a>
+    <a href="#" @click="open = false" class="text-base">Преимущества</a>
+    <a href="#" @click="open = false" class="text-base">Процесс</a>
+    <a href="#" @click="open = false" class="text-base">Отзывы</a>
+    <a href="#" @click="open = false" class="text-base">Контакты</a>
+    <a href="#" @click="open = false" class="text-base">Статьи</a>
     <a href="tel:+7702030203" class="text-[#007AFF] font-bold">+7702030203</a>
   </div>
 </header>
 
-
-  <!-- Hero / Первый экран -->
   <div class="max-w-screen-xl mx-auto">
     <section id="hero" class="relative py-10 md:py-6">
       <div class="px-[5%] max-w-screen-xl mx-auto flex flex-col md:flex-row items-start md:items-center gap-10 md:gap-16">
-    
-        <!-- Текст -->
+        <div class="absolute top-[-10rem] right-[-15rem] w-[30rem] h-[30rem] rounded-full bg-[#007AFF] blur-[160px] opacity-40 z-0 pointer-events-none"></div>
+        <div class="absolute top-0 -left-5 w-[30rem] h-[30rem] rounded-full bg-[#f0b766] blur-[160px] opacity-40 z-0 pointer-events-none"></div>
         <div class="w-full md:w-1/2 z-20 md:left-0">
           <h1 class="text-4xl sm:text-3xl md:text-6xl md:leading-[60px] font-bold leading-tight text-[#343434] mb-4 md:mb-6">
             Таможенное<br />
@@ -122,7 +76,7 @@
             Ваш надежный партнер в<br class="block sm:hidden"> таможенном брокерстве с 2012 года
           </p>
           <button
-            class="bg-[#007AFF] text-white px-6 py-3 rounded-full font-medium hover:bg-blue-600 transition text-sm sm:text-base">
+            class="bg-[#007AFF] text-white px-6 py-3 rounded-full font-medium hover:bg-blue-600 transition text-sm sm:text-base cursor-pointer">
             Оставить заявку
           </button>
         </div>
@@ -137,7 +91,6 @@
         </div>
       </div>
     
-      <!-- SVG -->
       <div class="absolute bottom-0 md:bottom-[-80px] left-0 w-full pointer-events-none z-0">
         <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
           <path d="M869.5 15C849.5 98.3333 755.1 245.8 537.5 169C265.5 73 75 99.5 15 355.5"
@@ -149,13 +102,13 @@
     
     
   </div>
-  <!-- Преимущества -->
+
+
   <div class="px-[5%] max-w-screen-xl mx-auto">
     <section id="adv" class="py-5 relative z-10">
       <div class="container mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
 
-          <!-- Карточка -->
           <div
             class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative z-10">
             <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest] ">Работа без
@@ -166,7 +119,6 @@
             </div>
           </div>
 
-          <!-- Карточка -->
           <div
             class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
             <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Минимальные
@@ -177,7 +129,6 @@
             </div>
           </div>
 
-          <!-- Карточка -->
           <div
             class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
             <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Аудит и
@@ -188,7 +139,6 @@
             </div>
           </div>
 
-          <!-- Карточка -->
           <div
             class="bg-white h-[216px] rounded-[0.8rem] p-[1.85rem] flex flex-col items-start gap-4 overflow-hidden relative">
             <h3 class="text-[1.3rem] leading-[1.2] font-semibold text-[#343434] text-left font-[Onest]">Поддержка
@@ -205,7 +155,6 @@
   </div>
 
 
-  <!-- Нам доверяют / Логотипы партнеров -->
   <section class="py-8 md:py-12">
     <div class="max-w-screen-xl mx-auto px-[5%]">
       <h2 class="text-3xl md:text-4xl font-bold text-[#343434] mb-6 leading-tight">
@@ -213,11 +162,10 @@
       </h2>
     </div>
   
-    <!-- Лента логотипов -->
+
     <div class="w-full overflow-hidden bg-[#2F6ABF] py-4 h-[80px]">
       <div class="flex w-[200%] animate-marquee">
         
-        <!-- Первая половина -->
         <div class="flex gap-10 sm:gap-18 w-1/2 items-center justify-center">
           <div class="w-[150px] h-[60px]">
           <img src="public/img/logos/bazis.png" class="h-10 sm:h-12 object-contain" />
@@ -234,7 +182,6 @@
 
         </div>
   
-        <!-- Вторая половина (для бесконечной прокрутки) -->
         <div class="flex gap-10 sm:gap-18 w-1/2 items-center justify-center">
           <div class="w-[150px] h-[60px]">
           <img src="public/img/logos/bazis.png" class="h-10 sm:h-12 object-contain" />
@@ -298,17 +245,15 @@
   </section>
   
 
-  <section class="py-16 bg-[#f8f9ff]">
+  <section id="services" class="py-16 bg-[#f8f9ff]">
     <div class="px-[5%] max-w-screen-xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-[#343434] mb-6">
         Наши услуги
       </h2>
 
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Карточка -->
         <div class="bg-white rounded-3xl p-6 flex flex-col gap-6">
           <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
-            <!-- Иконка -->
             <img src="public/img/icons/box.svg" alt="Иконка" class="w-10 h-10" />
           </div>
           <h3 class="text-[1.3rem] font-semibold text-[#343434] leading-snug">
@@ -324,7 +269,6 @@
         </div>
         <div class="bg-white rounded-3xl p-6 flex flex-col gap-6">
           <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
-            <!-- Иконка -->
             <img src="public/img/icons/shield.svg" alt="Иконка" class="w-10 h-10" />
           </div>
           <h3 class="text-[1.3rem] font-semibold text-[#343434] leading-snug">
@@ -340,7 +284,6 @@
         </div>
         <div class="bg-white rounded-3xl p-6 flex flex-col gap-6">
           <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
-            <!-- Иконка -->
             <img src="public/img/icons/cert.svg" alt="Иконка" class="w-10 h-10" />
           </div>
           <h3 class="text-[1.3rem] font-semibold text-[#343434] leading-snug">
@@ -372,7 +315,6 @@
         </div>
         <div class="bg-white rounded-3xl  p-6 flex flex-col gap-6">
           <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
-            <!-- Иконка -->
             <img src="public/img/icons/check.svg" alt="Иконка" class="w-8 h-8" />
           </div>
           <h3 class="text-[1.3rem] font-semibold text-[#343434] leading-snug">
@@ -388,7 +330,6 @@
         </div>
         <div class="bg-white rounded-3xl p-6 flex flex-col gap-6">
           <div class="w-17 h-17 flex items-center justify-center rounded-full border border-gray-300">
-            <!-- Иконка -->
             <img src="public/img/icons/return.svg" alt="Иконка" class="w-8 h-8" />
           </div>
           <h3 class="text-[1.3rem] font-semibold text-[#343434] leading-snug">
@@ -431,48 +372,49 @@
 
 
   <div class="px-[5%] max-w-screen-xl mx-auto">
-    <section class="pt-8 pb-0 relative">
+    <section id="process" class="pt-8 pb-0 relative">
       <div id="cards" class="relative h-[300vh]">
-        <h2 class="sticky top-[15rem] sm:top-[15rem] h-[40vh] z-0 text-center bg-gray-50 py-4 text-3xl md:text-4xl font-bold text-[#343434] mb-2">
+        <div class="absolute top-[-10rem] right-[-15rem] w-[30rem] h-[30rem] rounded-full bg-[#007AFF] blur-[160px] opacity-40 z-10 pointer-events-none"></div>
+        <div class="absolute top-0 -left-5 w-[30rem] h-[30rem] rounded-full bg-[#f0b766] blur-[160px] opacity-40 z-10 pointer-events-none"></div>
+        <div class="absolute bottom-0 right-[-15rem] w-[30rem] h-[30rem] rounded-full bg-[#007AFF] blur-[160px] opacity-40 z-10 pointer-events-none"></div>
+        <div class="absolute bottom-0 -left-5 w-[30rem] h-[30rem] rounded-full bg-[#f0b766] blur-[160px] opacity-40 z-10 pointer-events-none"></div>
+        <h2 class="sticky top-[15rem] sm:top-[8rem] md:top-[15rem] lg:top-[14rem] h-[40vh] z-0 text-center bg-gray-50 py-4 text-3xl md:text-4xl font-bold text-[#343434] mb-2">
           Как мы работаем?
         </h2>
-  
-        <!-- Карточка 1 -->
+
         <div class="sticky top-24 h-[80vh] flex items-center justify-center z-10">
           <div
             class="card__content flex flex-col sm:flex-row items-start h-auto sm:h-[200px] gap-4 sm:gap-20 bg-white w-[90%] sm:w-3/5 p-6 sm:p-8 rounded-xl shadow-xl transition-transform duration-200 ease-linear">
             <div class="text-3xl sm:text-4xl font-bold text-blue-600">01</div>
             <div class="flex flex-col justify-between">
-              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">Подготовка документов</h3>
-              <p class="text-gray-600 leading-relaxed">
+              <h3 class="text-xl sm:text-2xl font-semibold mb-2">Подготовка документов</h3>
+              <p class="leading-relaxed">
                 Соберем и подготовим все необходимые документы
               </p>
             </div>
           </div>
         </div>
   
-        <!-- Карточка 2 -->
         <div class="sticky top-24 h-[80vh] flex items-center justify-center z-10">
           <div
             class="card__content flex flex-col sm:flex-row items-start h-auto sm:h-[200px] gap-4 sm:gap-20 bg-white w-[90%] sm:w-3/5 p-6 sm:p-8 rounded-xl shadow-xl transition-transform duration-200 ease-linear">
             <div class="text-3xl sm:text-4xl font-bold text-blue-600">02</div>
             <div class="flex flex-col justify-between">
-              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">Проверка и согласование</h3>
-              <p class="text-gray-600 leading-relaxed">
+              <h3 class="text-xl sm:text-2xl font-semibold  mb-2">Проверка и согласование</h3>
+              <p class="leading-relaxed">
                 Уточняем детали и приводим документацию в нужный вид
               </p>
             </div>
           </div>
         </div>
   
-        <!-- Карточка 3 -->
         <div class="sticky top-24 h-[80vh] flex items-center justify-center z-10">
           <div
             class="card__content flex flex-col sm:flex-row items-start h-auto sm:h-[200px] gap-4 sm:gap-20 bg-white w-[90%] sm:w-3/5 p-6 sm:p-8 rounded-xl shadow-xl transition-transform duration-200 ease-linear">
             <div class="text-3xl sm:text-4xl font-bold text-blue-600">03</div>
             <div class="flex flex-col justify-between">
-              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">Финальное оформление</h3>
-              <p class="text-gray-600 leading-relaxed">
+              <h3 class="text-xl sm:text-2xl font-semibold  mb-2">Финальное оформление</h3>
+              <p class="leading-relaxed">
                 Завершаем все формальности и запускаем проект
               </p>
             </div>
@@ -484,31 +426,26 @@
   </div>
   
   
-  <section x-data="testimonialsComponent()" class="py-8">
+  <section id="reviews" x-data="testimonialsComponent()" class="py-8">
     <h2 class="text-3xl md:text-4xl font-bold text-[#343434] mb-6 text-center">Отзывы наших партнёров</h2>
     <div class="relative max-w-screen-xl px-[5%] mx-auto">
-      <!-- Карточка отзыва -->
       <template x-for="(item, index) in testimonials" :key="index">
-        <div x-show="activeIndex === index"
-          class="relative bg-white rounded-2xl shadow-sm px-6 sm:px-12 md:px-24 lg:px-60 py-10 flex flex-col justify-center">
-          <!-- Кавычка -->
-          <div class="text-blue-500 text-4xl mb-4">“</div>
+        <div x-show="activeIndex === index" class="relative bg-white rounded-2xl shadow-sm px-6 sm:px-12 md:px-24 md:h-[600px] lg:px-60 py-10 flex flex-col justify-center">
+          <div class="text-blue-500 text-4xl mb-4">„</div>
   
-          <!-- Текст отзыва -->
           <p class="text-gray-800 text-lg leading-relaxed mb-8" x-text="item.text"></p>
   
-          <!-- Линия -->
           <hr class="border-blue-200 mb-6">
   
           <div class="flex items-center gap-4">
             <img :src="item.avatar" :alt="item.name" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border">
             <div>
-              <p class="text-base font-semibold text-gray-900" x-text="item.name"></p>
+              <p class="text-base font-semibold " x-text="item.name"></p>
               <p class="text-sm text-gray-500" x-text="item.position"></p>
             </div>
           </div>
   
-          <div class="hidden md:block absolute w-20 h-20 left-10 top-1/2 -translate-y-1/2 cursor-pointer">
+          <div class="hidden lg:block absolute w-20 h-20 left-10 top-1/2 -translate-y-1/2 cursor-pointer">
             <button @click="prev()"
               class="w-20 h-20 rounded-full bg-white shadow flex items-center justify-center text-blue-500 cursor-pointer">
               <svg class="w-15 h-15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -517,7 +454,7 @@
             </button>
           </div>
   
-          <div class="hidden md:block absolute w-20 h-20 right-10 top-1/2 -translate-y-1/2 cursor-pointer">
+          <div class="hidden lg:block absolute w-20 h-20 right-10 top-1/2 -translate-y-1/2 cursor-pointer">
             <button @click="next()"
               class="w-20 h-20 rounded-full bg-white shadow flex items-center justify-center text-blue-500 cursor-pointer">
               <svg class="w-15 h-15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -528,29 +465,29 @@
         </div>
       </template>
   
-      <!-- Индикаторы -->
       <div class="flex justify-center mt-8 space-x-2">
         <template x-for="(item, index) in testimonials" :key="index">
           <button @click="goTo(index)"
             :class="{'bg-blue-500': activeIndex === index, 'bg-gray-300': activeIndex !== index}"
-            class="w-2.5 h-2.5 rounded-full transition-colors"></button>
+            class="w-2.5 h-2.5 rounded-full transition-colors cursor-pointer"></button>
         </template>
       </div>
     </div>
   </section>
   
-  <!-- Статьи -->
 
   <div class="px-[5%] max-w-screen-xl mx-auto">
-    <section class="py-12">
+    <section id="articles" class="py-12">
       <h2 class="text-3xl md:text-4xl font-bold text-[#343434] mb-6">Полезное о таможне</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Карточка статьи -->
-        <a href="/articles/1"
+        <a href="/articles/1.html"
           class="block bg-white rounded-xl  overflow-hidden hover:shadow-md transition-shadow">
           <article class="bg-white rounded-xl  overflow-hidden">
-            <div class="bg-gray-300 h-64 rounded-t-xl"></div>
+            <div class="bg-gray-300 h-64 rounded-t-xl flex items-center justify-center overflow-hidden">
+              <img src="/public/img/articles/article1.png" class="h-full object-cover" alt="Картинка статьи">
+            </div>
+            
             <div class="p-4">
               <p class="text-blue-500 text-sm mb-1">27.02.2025</p>
               <h3 class="text-xl font-semibold mb-1">Высокое качество услуг</h3>
@@ -566,12 +503,11 @@
           <div class="p-4">
             <p class="text-blue-500 text-sm mb-1">27.02.2025</p>
             <h3 class="text-xl font-semibold mb-1">Высокое качество услуг</h3>
-            <p class="text-gray-700 text-sm">Профессионализм на каждом этапе</p>
+            <p class="text-sm">Профессионализм на каждом этапе</p>
           </div>
         </article>
       </a>
 
-        <!-- Карточка статьи -->
         <a href="/articles/3"
           class="block bg-white rounded-xl overflow-hidden hover:shadow-md transition-shadow">
           <article class="bg-white rounded-xl shadow-sm overflow-hidden">
@@ -579,7 +515,7 @@
             <div class="p-4">
               <p class="text-blue-500 text-sm mb-1">27.02.2025</p>
               <h3 class="text-xl font-semibold mb-1">Высокое качество услуг</h3>
-              <p class="text-gray-700 text-sm">Профессионализм на каждом этапе</p>
+              <p class=" text-sm">Профессионализм на каждом этапе</p>
             </div>
           </article>
         </a>
@@ -591,7 +527,6 @@
     <section class="relative bg-[#E6F1FF] py-16 pb-60 md:py-16  w-auto rounded-[30px] overflow-hidden">
   
       <div class="z-20 flex flex-col md:flex-row items-center justify-between px-[5%] gap-8">
-        <!-- Левая колонка: форма -->
         <div class="w-full md:w-1/2">
           <h2 class="text-3xl md:text-4xl font-bold text-[#343434]">Оставьте заявку</h2>
           <p class="text-lg text-[#343434] mb-8">и получите бесплатную консультацию</p>
@@ -624,14 +559,13 @@
       
     </section>
   </div>
-  
 
 
-  <section class="py-16 bg-[#F7F9FF]">
+
+  <section id="contacts" class="py-16 bg-[#F7F9FF]">
     <div class="px-[5%] max-w-screen-xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-[#343434] mb-6">Контакты</h2>
-  
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-50 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-50 items-start">
         <div class="rounded-2xl overflow-hidden">
           <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
           <script charset="utf-8">
@@ -691,7 +625,6 @@
 
   <footer class="bg-white text-[#343434] pt-12 pb-6 rounded-2xl">
     <div class="max-w-screen-xl mx-auto px-[5%] flex flex-col md:flex-row md:items-start justify-between gap-10">
-      <!-- Логотип и копирайт -->
       <div class="flex flex-col gap-4 w-full md:w-1/4">
         <a href="#">
         <img src="public/img/logo.png" alt="Логотип" class="w-auto max-w-30">
@@ -699,7 +632,6 @@
         <p class="text-sm text-gray-500">© Duty Almaty, 2025</p>
       </div>
   
-      <!-- Услуги -->
       <div class="w-full md:w-1/4">
         <h4 class="text-gray-500 text-sm font-semibold mb-4">Услуги</h4>
         <ul class="space-y-2 text-sm">
@@ -719,7 +651,6 @@
         </ul>
       </div>
   
-      <!-- Реквизиты -->
       <div class="w-full md:w-1/4">
         <h4 class="text-gray-500 text-sm font-semibold mb-4">Реквизиты</h4>
         <p class="text-sm leading-relaxed">

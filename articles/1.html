@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформление грузов и деклараций в Алматы</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="/src/styles/output.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/public/img/icons/favicon.svg" sizes="32x32">
+</head>
+<script src="/src/modal.js" defer></script>
+<body class="bg-[#F7F9FF] text-[#343434]">
+  <!-- HEADER -->
+  <header x-data="{ open: false }" class="max-w-screen-xl mx-auto flex px-5 py-3 justify-between items-center rounded-xl sticky top-0 z-50 bg-white col-span-full my-5 shadow-2xs">
+    <a href="/" class="cursor-pointer">
+      <img class="h-[60px] w-[150px]" src="/public/img/logo.png" />
+    </a>
+    <nav class="hidden md:flex space-x-4 gap-5 p-5 mx-[4%]">
+      <a href="/#adv" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Услуги</a>
+      <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Преимущества</a>
+      <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Процесс</a>
+      <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Отзывы</a>
+      <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Контакты</a>
+      <a href="#" class="text-gray-900 hover:text-gray-900 text-[0.8rem]">Статьи</a>
+    </nav>
+    <button class="px-5 py-1 text-[#007AFF] text-[1rem] font-onest text-base font-medium leading-[39.7px] tracking-[-0.01em] text-center border border-[#007AFF] rounded-full hover:bg-[#007AFF] hover:text-white transition cursor-pointer">
+      +7702030203
+    </button>
+    <button @click="open = !open" class="md:hidden z-50 text-3xl text-[#007AFF]">
+      <span x-show="!open">☰</span>
+      <span x-show="open">✕</span>
+    </button>
+    <div x-show="open" x-transition class="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-6 md:hidden z-40">
+      <a href="#adv" @click="open = false" class="text-gray-900 text-base">Услуги</a>
+      <a href="#" @click="open = false" class="text-gray-900 text-base">Преимущества</a>
+      <a href="#" @click="open = false" class="text-gray-900 text-base">Процесс</a>
+      <a href="#" @click="open = false" class="text-gray-900 text-base">Отзывы</a>
+      <a href="#" @click="open = false" class="text-gray-900 text-base">Контакты</a>
+      <a href="#" @click="open = false" class="text-gray-900 text-base">Статьи</a>
+      <a href="tel:+7702030203" class="text-[#007AFF] font-bold">+7702030203</a>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <section class="py-16">
+    <div class="max-w-screen-md mx-auto">
+      <header class="mb-5">
+        <p class="text-blue-500 text-sm mb-2">27.02.2025</p>
+        <h1 class="text-3xl md:text-4xl font-bold text-[#343434] leading-tight">Высокое качество услуг</h1>
+      </header>
+      <div class="mb-5">
+        <img src="/public/img/services.png" alt="Изображение статьи" class="rounded-xl w-full object-cover max-h-[400px]" />
+      </div>
+      <article class="prose prose-lg max-w-none text-[#343434] leading-relaxed pt-8">
+        <h1 class="text-3xl font-bold mb-2">Важно про оформление грузов и деклараций</h1>
+        <p>Мы предоставляем полный спектр услуг по оформлению грузов...</p>
+        <ul class="list-disc pl-6 mt-4 space-y-2">
+          <li>Подготовка и подача таможенной декларации</li>
+          <li>Электронное декларирование</li>
+          <li>Проверка корректности документов</li>
+          <li>Классификация товаров</li>
+          <li>Определение таможенной стоимости</li>
+        </ul>
+        <p class="mt-6">Мы обеспечиваем соответствие всем нормативным требованиям...</p>
+        <p class="mt-6">Готовы начать? Свяжитесь с нами или оставьте заявку.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-[#f8f9ff]">
+    <div class="px-[5%] max-w-screen-xl mx-auto">
+      <div class="bg-gradient-to-b from-[#75a9f8] to-[#337dff] rounded-xl text-center text-white py-12 px-6">
+        <h2 class="text-2xl md:text-4xl font-bold mb-8">
+          Обсудить необходимую услугу
+        </h2>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="bg-[#3767b5] hover:bg-[#2e5aad] text-white text-lg font-medium py-3 px-8 rounded-full transition cursor-pointer">
+            +7 (777) 777 77 77
+          </button>
+          <button id="openModalBtn"
+            class="bg-white hover:bg-gray-100 text-[#337dff] text-lg font-medium py-3 px-8 rounded-full transition cursor-pointer">
+            Оставить заявку
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MODAL + CALL TO ACTION -->
+  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-40 z-50 flex items-center justify-center px-4">
+    <div class="relative w-full max-w-3xl bg-[#E6F1FF] rounded-[30px] overflow-hidden py-10 px-6 md:px-12">
+      <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+        <div class="w-full md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#343434]">Оставьте заявку</h2>
+          <p class="text-lg text-[#343434] mb-8">и получите бесплатную консультацию</p>
+          <form class="space-y-4 relative z-20">
+            <input type="text" placeholder="Ваше имя" class="w-full rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <input type="tel" placeholder="Телефон" class="w-full rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <input type="email" placeholder="E-mail" class="w-full rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <textarea placeholder="Комментарий" rows="3" class="w-full rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+            <button type="submit" class="bg-blue-600 text-white rounded-full py-3 px-8 font-semibold hover:bg-blue-700 transition">Оставить заявку</button>
+          </form>
+        </div>
+        <div class="hidden md:block absolute bottom-0 -right-20 w-[80%] pointer-events-none select-none z-0">
+          <img src="/public/img/people.png" alt="Люди с документами" class="w-full h-auto object-contain" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-white text-[#343434] pt-12 pb-6 rounded-2xl mt-20">
+    <div class="max-w-screen-xl mx-auto px-[5%] flex flex-col md:flex-row md:items-start justify-between gap-10">
+      <div class="flex flex-col gap-4 w-full md:w-1/4">
+        <a href="#">
+          <img src="/public/img/logo.png" alt="Логотип" class="w-[150px]">
+        </a>
+        <p class="text-sm text-gray-500">© Duty Almaty, 2025</p>
+      </div>
+      <div class="w-full md:w-1/4">
+        <h4 class="text-gray-500 text-sm font-semibold mb-4">Услуги</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:underline">Оформление грузов</a></li>
+          <li><a href="#" class="hover:underline">Таможенное брокерство</a></li>
+          <li><a href="#" class="hover:underline">Сертификация</a></li>
+          <li><a href="#" class="hover:underline">Сопровождение грузов</a></li>
+          <li><a href="#" class="hover:underline">Возврат платежей</a></li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/4">
+        <h4 class="text-gray-500 text-sm font-semibold mb-4">Соцсети</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://t.me/dutyalmaty" target="_blank" class="hover:underline">Telegram ↗</a></li>
+          <li><a href="#" class="hover:underline">WhatsApp ↗</a></li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/4">
+        <h4 class="text-gray-500 text-sm font-semibold mb-4">Реквизиты</h4>
+        <p class="text-sm leading-relaxed">ТОО "Duty Almaty"<br>БИН: 5406799400<br></p>
+      </div>
+    </div>
+    <div class="max-w-screen-xl mx-auto px-[5%] mt-10 border-t pt-4 border-gray-200 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center">
+      <a href="#" class="hover:text-gray-600">
+        <p>Политика конфиденциальности</p>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>

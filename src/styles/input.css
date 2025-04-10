@@ -1,24 +1,45 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@layer base {
+    :root {
+      --numcards: 3;
+    }
+
+    html {
+      font-family: 'Onest', sans-serif;
+    }
+    body {
+        color: #343434;
+      }
+    }
+    
+  @layer utilities {
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+  }
+
+  @layer components {
+    .card {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 60px;
+      border-radius: 1.5rem;
+      background: white;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transform-origin: top center;
+    }
+  }
 
 
-/* @layer components {
-    .btn {
-      @apply px-10 py-3 rounded-full font-medium transition cursor-pointer;
-    }
-  
-    .btn-primary {
-      @apply bg-accent text-white hover:bg-blue-700;
-    }
-  
-    .btn-outline {
-      @apply border text-accent hover:bg-accent hover:text-white;
-    }
-  
-    .text-h2 {
-      @apply text-3xl md:text-4xl font-bold text-textBlack mb-7;
-    }
-  } */
