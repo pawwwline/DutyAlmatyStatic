@@ -1,3 +1,11 @@
 node_modules/
-package.json
+src/styles/input.css
+dist/
+*.log
+*.DS_Store
+.vscode/
+src/modal.js
+src/script.js
 tailwind.config.js
+package.json
+package-lock.json
