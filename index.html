@@ -426,54 +426,44 @@
   </div>
   
   
-  <section id="reviews" x-data="testimonialsComponent()" class="py-8">
+  <section id="reviews" class="py-8">
     <h2 class="text-3xl md:text-4xl font-bold text-[#343434] mb-6 text-center">Отзывы наших партнёров</h2>
     <div class="relative max-w-screen-xl px-[5%] mx-auto">
-      <template x-for="(item, index) in testimonials" :key="index">
-        <div x-show="activeIndex === index" class="relative bg-white rounded-2xl shadow-sm px-6 sm:px-12 md:px-24 md:h-[600px] lg:px-60 py-10 flex flex-col justify-center">
-          <div class="text-blue-500 text-4xl mb-4">„</div>
-  
-          <p class="text-gray-800 text-lg leading-relaxed mb-8" x-text="item.text"></p>
-  
-          <hr class="border-blue-200 mb-6">
-  
-          <div class="flex items-center gap-4">
-            <img :src="item.avatar" :alt="item.name" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border">
-            <div>
-              <p class="text-base font-semibold " x-text="item.name"></p>
-              <p class="text-sm text-gray-500" x-text="item.position"></p>
-            </div>
-          </div>
-  
-          <div class="hidden lg:block absolute w-20 h-20 left-10 top-1/2 -translate-y-1/2 cursor-pointer">
-            <button @click="prev()"
-              class="w-20 h-20 rounded-full bg-white shadow flex items-center justify-center text-blue-500 cursor-pointer">
-              <svg class="w-15 h-15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-          </div>
-  
-          <div class="hidden lg:block absolute w-20 h-20 right-10 top-1/2 -translate-y-1/2 cursor-pointer">
-            <button @click="next()"
-              class="w-20 h-20 rounded-full bg-white shadow flex items-center justify-center text-blue-500 cursor-pointer">
-              <svg class="w-15 h-15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+      <div id="testimonial-container" class="relative bg-white rounded-2xl shadow-sm px-6 sm:px-12 md:px-24 md:h-[600px] lg:px-60 py-10 flex flex-col justify-center">
+        <div class="text-blue-500 text-4xl mb-4">„</div>
+        <p id="testimonial-text" class="text-gray-800 text-lg leading-relaxed mb-8"></p>
+        <hr class="border-blue-200 mb-6">
+        <div class="flex items-center gap-4">
+          <img id="testimonial-avatar" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border" />
+          <div>
+            <p id="testimonial-name" class="text-base font-semibold"></p>
+            <p id="testimonial-position" class="text-sm text-gray-500"></p>
           </div>
         </div>
-      </template>
   
-      <div class="flex justify-center mt-8 space-x-2">
-        <template x-for="(item, index) in testimonials" :key="index">
-          <button @click="goTo(index)"
-            :class="{'bg-blue-500': activeIndex === index, 'bg-gray-300': activeIndex !== index}"
-            class="w-2.5 h-2.5 rounded-full transition-colors cursor-pointer"></button>
-        </template>
+        <div class="hidden lg:block absolute w-20 h-20 left-10 top-1/2 -translate-y-1/2 cursor-pointer">
+          <button id="prev-btn"
+            class="w-20 h-20 rounded-full bg-white shadow flex items-center justify-center text-blue-500 cursor-pointer">
+            <svg class="w-15 h-15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+        </div>
+  
+        <div class="hidden lg:block absolute w-20 h-20 right-10 top-1/2 -translate-y-1/2 cursor-pointer">
+          <button id="next-btn"
+            class="w-20 h-20 rounded-full bg-white shadow flex items-center justify-center text-blue-500 cursor-pointer">
+            <svg class="w-15 h-15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
+  
+      <div id="dots-container" class="flex justify-center mt-8 space-x-2"></div>
     </div>
   </section>
+  
   
 
   <div class="px-[5%] max-w-screen-xl mx-auto">
@@ -667,7 +657,7 @@
   </footer>
   
   
-  <script src="src/script.min.js" defer></script>
+  <script src="src/script.js" defer></script>
 </body>
 
 </html>

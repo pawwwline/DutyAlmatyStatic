@@ -1,50 +1,78 @@
-window.testimonialsComponent = testimonialsComponent;
-
-function testimonialsComponent() {
-  return {
-    activeIndex: 0,
-    userInteracted: false,
-    testimonials: [
-      {
-        text: "Отличные услуги по оформлению таможни! Сотрудники компании профессионально и оперативно решили все вопросы, связанные с таможенным оформлением моего груза. Документы были подготовлены быстро и без ошибок. Особенно хочу отметить дружелюбие и готовность помочь на каждом этапе процесса. Рекомендую эту компанию всем, кто ищет надёжного партнёра для таможенных операций.",
-        name: "Алексей Иванов",
-        position: "Директор по развитию, ООО 'ИнтерТрейд'",
-        avatar: "/path/to/avatar.jpg"
-      },
-      {
-        text: "Очень довольны сотрудничеством! Всё быстро, понятно и профессионально. Спасибо за индивидуальный подход и поддержку!",
-        name: "Екатерина Новикова",
-        position: "ООО 'ТаможПроф'",
-        avatar: "/path/to/avatar2.jpg"
-      },
-      {
-        text: "Хорошее сопровождение на всех этапах. Документы всегда в порядке, команда быстро отвечает на вопросы и даёт чёткие рекомендации.",
-        name: "Игорь Петров",
-        position: "Менеджер ВЭД, ООО 'ЛогистикСервис'",
-        avatar: "/path/to/avatar3.jpg"
-      }
-    ],
-    init() {
-      setInterval(() => {
-        if (!this.userInteracted) {
-          this.activeIndex = (this.activeIndex + 1) % this.testimonials.length;
-        }
-      }, 7000);
+document.addEventListener('DOMContentLoaded', function () {
+  const testimonials = [
+    {
+      text: "Отличные услуги по оформлению таможни!...",
+      name: "Алексей Иванов",
+      position: "Директор по развитию, ООО 'ИнтерТрейд'",
+      avatar: "/path/to/avatar.jpg"
     },
-    next() {
-      this.activeIndex = (this.activeIndex + 1) % this.testimonials.length;
-      this.userInteracted = true;
+    {
+      text: "Очень довольны сотрудничеством!...",
+      name: "Екатерина Новикова",
+      position: "ООО 'ТаможПроф'",
+      avatar: "/path/to/avatar2.jpg"
     },
-    prev() {
-      this.activeIndex = (this.activeIndex - 1 + this.testimonials.length) % this.testimonials.length;
-      this.userInteracted = true;
-    },
-    goTo(index) {
-      this.activeIndex = index;
-      this.userInteracted = true;
+    {
+      text: "Хорошее сопровождение на всех этапах...",
+      name: "Игорь Петров",
+      position: "Менеджер ВЭД, ООО 'ЛогистикСервис'",
+      avatar: "/path/to/avatar3.jpg"
     }
+  ];
+
+  let activeIndex = 0;
+  let userInteracted = false;
+
+  const textEl = document.getElementById('testimonial-text');
+  const nameEl = document.getElementById('testimonial-name');
+  const positionEl = document.getElementById('testimonial-position');
+  const avatarEl = document.getElementById('testimonial-avatar');
+  const dotsContainer = document.getElementById('dots-container');
+
+  const render = () => {
+    const { text, name, position, avatar } = testimonials[activeIndex];
+    textEl.textContent = text;
+    nameEl.textContent = name;
+    positionEl.textContent = position;
+    avatarEl.src = avatar;
+    avatarEl.alt = name;
+
+    [...dotsContainer.children].forEach((dot, i) => {
+      dot.className = `w-2.5 h-2.5 rounded-full transition-colors cursor-pointer ${i === activeIndex ? 'bg-blue-500' : 'bg-gray-300'}`;
+    });
   };
-}
+
+  document.getElementById('next-btn').addEventListener('click', () => {
+    activeIndex = (activeIndex + 1) % testimonials.length;
+    userInteracted = true;
+    render();
+  });
+
+  document.getElementById('prev-btn').addEventListener('click', () => {
+    activeIndex = (activeIndex - 1 + testimonials.length) % testimonials.length;
+    userInteracted = true;
+    render();
+  });
+
+  testimonials.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.addEventListener('click', () => {
+      activeIndex = i;
+      userInteracted = true;
+      render();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  render();
+  setInterval(() => {
+    if (!userInteracted) {
+      activeIndex = (activeIndex + 1) % testimonials.length;
+      render();
+    }
+  }, 7000);
+});
+
 
 
 
